@@ -1,12 +1,21 @@
 :host {
-    width: 20rem;
-    background-color: rgba(243, 111, 111, 0.265);
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    height: 100svh;
+    width: 100%;
+}
+
+#con {
+    display: block;
+    overflow: hidden;
+    width: 140rem;
     aspect-ratio: 1;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(40, 1fr);
     box-sizing: border-box;
-    gap: 0;
+    transform: translate(-25%, -25%) rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1);
 }
 
 .tile {
@@ -20,4 +29,52 @@
 .tile:hover {
     transition-duration: 0ms;
     background-color: lightcyan;
+}
+
+.tile:nth-child(4n):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(4n + 1):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(4n + 2):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(4n + 3):hover {
+    background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(7n + 3):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(7n + 5):hover {
+    background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n + 6):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 1):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 4):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(11n + 7):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(11n + 10):hover {
+    background-color: rgb(var(--yellow-rgb));
 }
