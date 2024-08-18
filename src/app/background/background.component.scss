@@ -7,6 +7,7 @@
 }
 
 .con {
+    pointer-events: none;
     position: relative;
     width: fit-content;
     height: 5rem;
@@ -26,6 +27,8 @@
     margin: 0;
     padding: 0;
 
+    pointer-events: auto;
+
     width: 5rem;
     aspect-ratio: 1;
     background-color: var(--border);
@@ -38,7 +41,7 @@
 .tile::before {
     content: "";
     position: absolute;
-    pointer-events: none; // TODO
+    pointer-events: none;
     width: 5rem;
     aspect-ratio: 1;
     transform: scale(0.95);

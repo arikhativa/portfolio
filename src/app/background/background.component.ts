@@ -14,7 +14,7 @@ export class BackgroundComponent {
   items: string[] = [];
 
   ngOnInit() {
-    const i = 35
+    const i = 30
     this.lines = Array(i);
     this.items = Array(i);
   }
