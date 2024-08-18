@@ -6,29 +6,59 @@
     width: 100%;
 }
 
-#con {
-    display: block;
-    overflow: hidden;
-    width: 140rem;
-    aspect-ratio: 1;
-    display: grid;
-    grid-template-columns: repeat(40, 1fr);
-    grid-template-rows: repeat(40, 1fr);
+.con {
+    position: relative;
+    width: fit-content;
+    height: 5rem;
+    display: flex;
+    gap: 2.4rem;
     box-sizing: border-box;
-    transform: translate(-25%, -25%) rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1);
+    margin-top: -2.8rem;
+
+    // transform: translate(-25%, -25%) rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1);
+}
+
+.con:nth-child(even) {
+    margin-left: 3.7rem;
 }
 
 .tile {
-    border: solid 1px rgb(255 255 255 / 25%);
-    aspect-ratio: 1;
+    margin: 0;
+    padding: 0;
+
     width: 5rem;
+    aspect-ratio: 1;
+    background-color: var(--border);
     transition: background-color 1.5s;
-    background-color: transparent;
+
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }
+
+.tile::before {
+    content: "";
+    position: absolute;
+    pointer-events: none; // TODO
+    width: 5rem;
+    aspect-ratio: 1;
+    transform: scale(0.95);
+
+    z-index: 2;
+    transition: background-color 1.5s;
+    background-color: var(--background-rgb);
+
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+
+}
+
+// .tile:hover::before {
+//     transition-duration: 0ms;
+//     background-color: transparent;
+// }
 
 .tile:hover {
     transition-duration: 0ms;
-    background-color: lightcyan;
 }
 
 .tile:nth-child(4n):hover {
@@ -78,3 +108,12 @@
 .tile:nth-child(11n + 10):hover {
     background-color: rgb(var(--yellow-rgb));
 }
+
+
+// .tile {
+//     border: solid 1px rgb(255 255 255 / 25%);
+//     aspect-ratio: 1;
+//     width: 5rem;
+//     transition: background-color 1.5s;
+//     background-color: transparent;
+// }

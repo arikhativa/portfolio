@@ -10,11 +10,14 @@
     --green-rgb: 74 222 128;
     --yellow-rgb: 253 224 71;
 
-    --background-rgb: 0 0 0;
+    --border: rgb(255 255 255 / 25%);
+
+    --background-rgb: rgb(0, 0, 0);
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--background-rgb);
 }
