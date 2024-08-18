@@ -1,0 +1,23 @@
+:host {
+    width: 20rem;
+    background-color: rgba(243, 111, 111, 0.265);
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    box-sizing: border-box;
+    gap: 0;
+}
+
+.tile {
+    border: solid 1px rgb(255 255 255 / 25%);
+    aspect-ratio: 1;
+    width: 5rem;
+    transition: background-color 1.5s;
+    background-color: transparent;
+}
+
+.tile:hover {
+    transition-duration: 0ms;
+    background-color: lightcyan;
+}
