@@ -1,8 +1,9 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import {
     Component,
     ElementRef,
     Inject,
+    numberAttribute,
     Renderer2,
     ViewChild,
 } from '@angular/core';
@@ -15,33 +16,53 @@ import {
     styleUrl: './background.component.scss',
 })
 export class BackgroundComponent {
-    lines: string[] = [];
-    items: string[] = [];
-    background: string =
-        'rgb(255 255 255 / 2asdasdasdasdasdasdasdkjahdlkahdlasgdlasgdlasgdlasjghdlaas;lkdja;sldkja;slkdja;lskdj;alskdjsjhgdlasjhsjgdals5%)';
+    counter = 0;
+    readonly COLORS = [
+        '#F87171', // red
+        '#38BDF8', // blue
+        '#4ADE80', // green
+        '#FDE047', // yellow
+    ];
+
+    lines: number[] = [];
+    items: number[] = [];
+    background: string = 'rgb(255 255 255 / 25%)';
+
+    constructor(private el: ElementRef, private renderer: Renderer2) {}
 
     ngOnInit() {
-        const s = '30';
-        const i = 30;
-        this.lines = Array(i);
-        this.items = Array(i);
+        // TODO
+        // const aaValue = getComputedStyle(
+        //     this.el.nativeElement
+        // ).getPropertyValue('--aa');
+        // console.log(aaValue);
+
+        const len = 30;
+        this.lines = generateRandomNumbers(len, 100);
+        this.items = generateRandomNumbers(len, 100);
     }
 
-    changeBackgroundColor(event: any) {
-        const randomColor = this.getRandomColor();
-        event.target.style.backgroundColor = randomColor;
+    changeBackgroundColor(event: MouseEvent, row: number, col: number) {
+        const randomColor = this.getColor(row, col);
+        if (event.target instanceof HTMLElement)
+            event.target.style.backgroundColor = randomColor;
     }
 
-    resetBackgroundColor(event: any) {
-        event.target.style.backgroundColor = this.background;
+    resetBackgroundColor(event: MouseEvent) {
+        if (event.target instanceof HTMLElement)
+            event.target.style.backgroundColor = this.background;
     }
 
-    getRandomColor(): string {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
+    getColor(row: number, col: number): string {
+        const color = this.COLORS[(row + col) % this.COLORS.length];
         return color;
     }
+}
+
+function generateRandomNumbers(length: number, max: number): number[] {
+    const randomNumbers: number[] = [];
+    for (let i = 0; i < length; i++) {
+        randomNumbers.push(Math.floor(Math.random() * max));
+    }
+    return randomNumbers;
 }

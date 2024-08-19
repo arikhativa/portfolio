@@ -1,4 +1,4 @@
-<div #con *ngFor="let i of lines" class="con">
-    <div *ngFor="let item of items" #tile class="tile" (mouseover)="changeBackgroundColor($event)"
+<div #con *ngFor="let row of lines" class="con">
+    <div *ngFor="let col of items" #tile class="tile" (mouseover)="changeBackgroundColor($event, row, col)"
         (mouseout)="resetBackgroundColor($event)"></div>
 </div>
