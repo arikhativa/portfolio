@@ -1,6 +1,8 @@
 :host {
     display: block;
     overflow: hidden;
+    height: 100vh;
+    width: 100%;
 }
 
 #con {
@@ -20,7 +22,6 @@
     box-sizing: border-box;
     margin-top: -45px;
 }
-
 
 .row:nth-child(even) {
     margin-left: 58.5px;
