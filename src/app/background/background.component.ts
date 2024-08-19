@@ -24,7 +24,7 @@ export class BackgroundComponent {
         '#FDE047', // yellow
     ];
 
-    lines: number[] = [];
+    rows: number[] = [];
     items: number[] = [];
     background: string = 'rgb(255 255 255 / 25%)';
 
@@ -37,8 +37,8 @@ export class BackgroundComponent {
         // ).getPropertyValue('--aa');
         // console.log(aaValue);
 
-        const len = 30;
-        this.lines = generateRandomNumbers(len, 100);
+        const len = 100; // TODO maybe too much
+        this.rows = generateRandomNumbers(len, 100);
         this.items = generateRandomNumbers(len, 100);
     }
 

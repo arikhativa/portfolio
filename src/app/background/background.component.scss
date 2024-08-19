@@ -1,26 +1,29 @@
 :host {
     display: block;
     overflow: hidden;
-    height: 100vh;
-    height: 100svh;
-    width: 100%;
-    // transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg);
-
 }
 
-.con {
+#con {
+    display: block;
+    height: 150vh;
+    overflow: hidden;
+    width: 150vw;
+    margin-left: -80px;
+}
+
+.row {
     pointer-events: none;
     position: relative;
     width: fit-content;
-    height: 5rem;
+    height: 80px;
     display: flex;
-    gap: 2.4rem;
     box-sizing: border-box;
-    margin-top: -2.8rem;
+    margin-top: -45px;
 }
 
-.con:nth-child(even) {
-    margin-left: 3.7rem;
+
+.row:nth-child(even) {
+    margin-left: 58.5px;
 }
 
 .tile {
@@ -29,31 +32,40 @@
 
     pointer-events: auto;
 
-    width: 5rem;
+    width: 80px;
     aspect-ratio: 1;
     background-color: var(--border);
     transition: background-color 3s;
 
-    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    -webkit-clip-path: polygon(25% 5%,
+            75% 5%,
+            100% 50%,
+            75% 95%,
+            25% 95%,
+            0% 50%);
     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
 }
 
-.tile::before {
-    content: "";
-    position: absolute;
-    pointer-events: none;
-    width: 5rem;
-    aspect-ratio: 1;
-    transform: scale(0.95);
+// .tile::before {
+//     content: "";
+//     position: absolute;
+//     pointer-events: none;
+//     width: 80px;
+//     aspect-ratio: 1;
+//     transform: scale(0.95);
 
-    z-index: 2;
-    // transition: background-color 5s;
-    background-color: var(--background-rgb);
+//     z-index: 2;
+//     // transition: background-color 5s;
+//     // background-color: var(--background-rgb);
 
-    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-
-}
+//     -webkit-clip-path: polygon(25% 5%,
+//             75% 5%,
+//             100% 50%,
+//             75% 95%,
+//             25% 95%,
+//             0% 50%);
+//     clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+// }
 
 // .tile:hover::before {
 //     transition-duration: 0ms;
@@ -63,61 +75,3 @@
 .tile:hover {
     transition-duration: 0ms;
 }
-
-
-// .tile:nth-child(4n):hover {
-//     background-color: rgb(var(--red-rgb));
-// }
-
-// .tile:nth-child(4n + 1):hover {
-//     background-color: rgb(var(--blue-rgb));
-// }
-
-// .tile:nth-child(4n + 2):hover {
-//     background-color: rgb(var(--green-rgb));
-// }
-
-// .tile:nth-child(4n + 3):hover {
-//     background-color: rgb(var(--yellow-rgb));
-// }
-
-// .tile:nth-child(7n):hover {
-//     background-color: rgb(var(--blue-rgb));
-// }
-
-// .tile:nth-child(7n + 3):hover {
-//     background-color: rgb(var(--green-rgb));
-// }
-
-// .tile:nth-child(7n + 5):hover {
-//     background-color: rgb(var(--yellow-rgb));
-// }
-
-// .tile:nth-child(7n + 6):hover {
-//     background-color: rgb(var(--red-rgb));
-// }
-
-// .tile:nth-child(11n + 1):hover {
-//     background-color: rgb(var(--red-rgb));
-// }
-
-// .tile:nth-child(11n + 4):hover {
-//     background-color: rgb(var(--blue-rgb));
-// }
-
-// .tile:nth-child(11n + 7):hover {
-//     background-color: rgb(var(--green-rgb));
-// }
-
-// .tile:nth-child(11n + 10):hover {
-//     background-color: rgb(var(--yellow-rgb));
-// }
-
-
-// .tile {
-//     border: solid 1px rgb(255 255 255 / 25%);
-//     aspect-ratio: 1;
-//     width: 5rem;
-//     transition: background-color 1.5s;
-//     background-color: transparent;
-// }
