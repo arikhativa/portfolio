@@ -3,7 +3,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "cSpell.words": ["Yoav"],
+    "cSpell.words": ["rabby", "Yoav"],
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },

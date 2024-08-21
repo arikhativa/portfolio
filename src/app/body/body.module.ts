@@ -6,10 +6,11 @@ import { BackgroundComponent } from "../background/background.component"
 import { FormsModule } from "@angular/forms"
 import { DockModule } from "primeng/dock"
 import { RadioButtonModule } from "primeng/radiobutton"
-import { YoavComponent } from "../yoav/yoav.component"
+import { YoavComponent } from "../yoav/yoav.component";
+import { RabbyComponent } from '../rabby/rabby.component'
 
 @NgModule({
-    declarations: [NavbarComponent, IntroComponent, YoavComponent],
+    declarations: [NavbarComponent, IntroComponent, YoavComponent, RabbyComponent],
     imports: [
         CommonModule,
         BackgroundComponent,
