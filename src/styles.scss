@@ -16,6 +16,9 @@
 
     --primary: #3239ba;
     --primary-light: #8389f0;
+    // TODO these are not good colors
+    --background-light: rgb(255 255 255 / 25%);
+    --background-dark: rgba(255, 255, 255, 15%);
 }
 
 html,
@@ -27,6 +30,11 @@ body {
 
 .z--1 {
     z-index: -1;
+}
+
+// Translate
+.translate-left-50 {
+    transform: translateX(-50%);
 }
 
 // Animations
