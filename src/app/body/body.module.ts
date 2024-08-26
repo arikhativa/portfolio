@@ -10,6 +10,7 @@ import { YoavComponent } from '../yoav/yoav.component'
 import { RabbyComponent } from '../rabby/rabby.component'
 import { AboutComponent } from '../about/about.component'
 import { CardModule } from 'primeng/card'
+import { ButtonModule } from 'primeng/button'
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { CardModule } from 'primeng/card'
         AboutComponent,
     ],
     imports: [
+        ButtonModule,
         CardModule,
         CommonModule,
         BackgroundComponent,
