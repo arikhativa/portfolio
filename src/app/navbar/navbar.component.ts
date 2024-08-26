@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component } from '@angular/core'
+import { MenuItem } from 'primeng/api'
 
 @Component({
     selector: 'app-navbar',
@@ -7,47 +7,13 @@ import { MenuItem } from 'primeng/api';
     styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-    items: MenuItem[] | undefined;
+    activeIndex: number = 0
 
-    position: 'bottom' | 'top' | 'left' | 'right' = 'right';
+    setActive(i: number) {
+        this.activeIndex = i
+    }
 
-    positionOptions = [
-        {
-            label: 'Bottom',
-            value: 'bottom',
-        },
-        {
-            label: 'Top',
-            value: 'top',
-        },
-        {
-            label: 'Left',
-            value: 'left',
-        },
-        {
-            label: 'Right',
-            value: 'right',
-        },
-    ];
-
-    ngOnInit() {
-        this.items = [
-            {
-                label: 'Finder',
-                icon: 'https://primefaces.org/cdn/primeng/images/dock/finder.svg',
-            },
-            {
-                label: 'App Store',
-                icon: 'https://primefaces.org/cdn/primeng/images/dock/appstore.svg',
-            },
-            {
-                label: 'Photos',
-                icon: 'https://primefaces.org/cdn/primeng/images/dock/photos.svg',
-            },
-            {
-                label: 'Trash',
-                icon: 'https://primefaces.org/cdn/primeng/images/dock/trash.png',
-            },
-        ];
+    isActive(i: number) {
+        return this.activeIndex === i
     }
 }

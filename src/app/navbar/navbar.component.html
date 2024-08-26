@@ -24,22 +24,32 @@
         </g>
         <path
             id="hex1"
+            [class.active]="isActive(0)"
+            (click)="setActive(0)"
             class="hex"
+            routerLink="/"
             d="M44.9637 75.4256L63.1363 43.9496L99.4816 43.9496L117.654 75.4256L99.4816 106.902L63.1363 106.902L44.9637 75.4256Z"
         />
         <path
             id="hex2"
+            [class.active]="isActive(1)"
+            (click)="setActive(1)"
             class="hex"
+            routerLink="/about"
             d="M140.964 75.4122L159.136 43.9362L195.482 43.9362L213.654 75.4122L195.482 106.888L159.136 106.888L140.964 75.4122Z"
         />
         <path
             id="hex3"
+            [class.active]="isActive(2)"
+            (click)="setActive(2)"
             class="hex"
             d="M236.964 75.4122L255.136 43.9362L291.482 43.9362L309.654 75.4122L291.482 106.888L255.136 106.888L236.964 75.4122Z"
         />
         <path
             id="hex4"
             class="hex"
+            [class.active]="isActive(3)"
+            (click)="setActive(3)"
             d="M332.964 75.4122L351.136 43.9362L387.482 43.9362L405.654 75.4122L387.482 106.888L351.136 106.888L332.964 75.4122Z"
         />
     </g>
