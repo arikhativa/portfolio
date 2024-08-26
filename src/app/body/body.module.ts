@@ -7,8 +7,9 @@ import { FormsModule } from '@angular/forms'
 import { DockModule } from 'primeng/dock'
 import { RadioButtonModule } from 'primeng/radiobutton'
 import { YoavComponent } from '../yoav/yoav.component'
-import { RabbyComponent } from '../rabby/rabby.component';
+import { RabbyComponent } from '../rabby/rabby.component'
 import { AboutComponent } from '../about/about.component'
+import { CardModule } from 'primeng/card'
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { AboutComponent } from '../about/about.component'
         AboutComponent,
     ],
     imports: [
+        CardModule,
         CommonModule,
         BackgroundComponent,
         DockModule,

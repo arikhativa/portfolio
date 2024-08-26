@@ -12,6 +12,12 @@
                 "printWidth": 80,
                 "singleAttributePerLine": true
             }
+        },
+        {
+            "files": "*.ts",
+            "options": {
+                "importOrderSeparation": true
+            }
         }
     ]
 }

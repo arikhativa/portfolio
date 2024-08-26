@@ -4,21 +4,35 @@
 @import 'primeicons/primeicons.css';
 @import 'primeflex/primeflex.css';
 
+// Google
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
 :root {
     --red-rgb: 248 113 113; // TODO these are not in use right now
     --blue-rgb: 56 189 248;
     --green-rgb: 74 222 128;
     --yellow-rgb: 253 224 71;
 
-    --border: rgb(255 255 255 / 25%);
+    --box-shadow: -11px 19px 3px rgba(0, 0, 0, 0.5);
 
-    --background-rgb: rgb(0, 0, 0);
+    // Colors
+    --border: rgb(255 255 255 / 25%);
+    --background: #565656;
 
     --primary: #3239ba;
     --primary-light: #8389f0;
     // TODO these are not good colors
     --background-light: rgb(255 255 255 / 25%);
     --background-dark: rgba(255, 255, 255, 15%);
+
+    // not sure about these
+    font-weight: 400;
+    font-style: normal;
+
+    // override PrimeNG
+    --font-family: 'Inconsolata', monospace;
+    --text-color: #fff;
+    --primary-color: var(--primary);
 }
 
 html,
