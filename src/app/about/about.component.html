@@ -1,9 +1,10 @@
 <div class="flex mt-8 w-full justify-content-center align-items-center">
-    <div class="card flex justify-content-center max-w-30rem">
-        <p-card header="{{ header }}">
-            <p class="m-0">
-                {{ text }}
-            </p>
+    <div class="card flex flex-column gap-5 justify-content-center max-w-30rem">
+        <p-card
+            *ngFor="let c of cards; let i = index"
+            [header]="c.header"
+        >
+            <p class="m-0">{{ c.text }}</p>
         </p-card>
     </div>
 </div>
