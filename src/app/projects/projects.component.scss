@@ -1,0 +1,27 @@
+:host {
+    pointer-events: all;
+}
+::ng-deep .p-card {
+    background: var(--background);
+    box-shadow: var(--box-shadow);
+}
+
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+    color: var(--text-color);
+}
+
+::ng-deep .p-accordion .p-accordion-content {
+    background: var(--background);
+}
+
+::ng-deep .p-accordion .p-accordion-header .p-accordion-header-link {
+    background: var(--background);
+}
+
+::ng-deep .p-accordion p-accordiontab .p-accordion-tab {
+    border-bottom: 1px solid var(--primary-light);
+}
+
+::ng-deep .p-accordion p-accordiontab:last-of-type .p-accordion-tab {
+    border-bottom: 0 none;
+}

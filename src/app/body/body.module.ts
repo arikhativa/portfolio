@@ -11,7 +11,8 @@ import { RabbyComponent } from '../rabby/rabby.component'
 import { AboutComponent } from '../about/about.component'
 import { CardModule } from 'primeng/card'
 import { ButtonModule } from 'primeng/button'
-
+import { ProjectsComponent } from '../projects/projects.component'
+import { AccordionModule } from 'primeng/accordion'
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -19,8 +20,10 @@ import { ButtonModule } from 'primeng/button'
         YoavComponent,
         RabbyComponent,
         AboutComponent,
+        ProjectsComponent,
     ],
     imports: [
+        AccordionModule,
         ButtonModule,
         CardModule,
         CommonModule,
