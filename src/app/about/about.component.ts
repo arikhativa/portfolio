@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, QueryList, ViewChildren } from '@angular/core'
 import { sleep } from '../misc/utils'
 import { about } from '../misc/strings'
 import { StoreService } from '../store.service'
@@ -61,6 +61,7 @@ export class AboutComponent {
                 header: '',
                 text: '',
             })
+
             this.meta.type = 'header'
             await this.delayAppend(this.strings.cards[i].header, i, 'header')
             await sleep(500)
@@ -112,9 +113,5 @@ export class AboutComponent {
         })
         this.cards = c
         this.meta.done = true
-    }
-
-    scrollToCenter(e: HTMLElement) {
-        e.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 }
