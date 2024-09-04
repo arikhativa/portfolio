@@ -1,10 +1,11 @@
-svg {
-    pointer-events: all;
-    transition: transform 0.3s ease;
+:host:hover .scale {
+    transform: scale(1.1);
 }
 
-svg:hover {
-    transform: scale(1.1);
+svg {
+    z-index: 0;
+    pointer-events: all;
+    transition: transform 0.3s ease;
 }
 
 #bar path {
@@ -16,10 +17,17 @@ svg:hover {
     stroke-width: 2.5;
 }
 
-.hex {
-    pointer-events: all;
+.hex-con {
     cursor: pointer;
+    pointer-events: all;
+}
 
+.hex-con:hover .hex {
+    stroke: var(--primary-light);
+    stroke-width: 3;
+}
+
+.hex {
     fill: var(--background-dark);
     stroke: transparent;
     stroke-width: 0;
@@ -27,8 +35,13 @@ svg:hover {
     transition: stroke 0.3s ease, stroke-width 0.3s ease;
 }
 
-.hex.active,
-.hex:hover {
+.hex.active {
+    stroke: var(--primary-light);
+    stroke-width: 3;
+}
+
+.icon {
+    pointer-events: none;
     stroke: var(--primary-light);
     stroke-width: 3;
 }

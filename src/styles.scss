@@ -58,7 +58,10 @@ p-button {
     min-width: 20rem;
 }
 
-// Translate
+.translate-top-left-50 {
+    transform: translate(-50%, -50%);
+}
+
 .translate-left-50 {
     transform: translateX(-50%);
 }
