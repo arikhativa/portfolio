@@ -10,6 +10,11 @@ export type Card = {
 
 type CardKey = keyof Card
 
+type Image = {
+    src: string
+    alt: string
+}
+
 export type CardMeta = {
     cardIndex: number
     type: CardKey
@@ -27,6 +32,8 @@ export class AboutComponent {
     run!: boolean
     cards!: Card[]
     meta!: CardMeta
+    leftImages: Image[] = []
+    rightImages: Image[] = []
 
     constructor(private storeService: StoreService) {}
 
@@ -61,6 +68,13 @@ export class AboutComponent {
                 header: '',
                 text: '',
             })
+
+            if (this.strings.cards[i].leftImg) {
+                this.leftImages.push({
+                    src: this.strings.cards[i].leftImg || '',
+                    alt: '',
+                })
+            }
 
             this.meta.type = 'header'
             await this.delayAppend(this.strings.cards[i].header, i, 'header')

@@ -1,27 +1,47 @@
-<div class="flex mt-8 w-full justify-content-center align-items-center">
+<div class="flex mt-8 w-full justify-content-center">
     <p-button
         label="Skip"
         [raised]="true"
         (onClick)="skip()"
         class="fixed top-0 right-0 p-5"
     ></p-button>
-    <div
-        class="card flex flex-column gap-5 justify-content-center p-5 max-w-30rem"
-    >
-        <p-card
-            #pCard
-            *ngFor="let c of cards; let i = index"
-            [header]="c.header"
-        >
-            <p
-                [innerHTML]="c.text"
-                class="m-0"
-            ></p>
-        </p-card>
-        <!-- TODO make sure this is good on mobile -->
+    <div class="flex-1 flex justify-content-center p-5">
         <div
-            *ngFor="let c of cards"
-            class="mb-5"
-        ></div>
+            *ngFor="let img of leftImages"
+            class="w-fit"
+        >
+            <p-card>
+                <p>
+                    <img
+                        class="w-full"
+                        [src]="img.src"
+                        [alt]="img.alt"
+                    />
+                </p>
+            </p-card>
+        </div>
     </div>
+    <div class="flex-1">
+        <div
+            class="flex flex-column gap-5 justify-content-center p-5 max-w-30rem"
+        >
+            <p-card
+                #pCard
+                *ngFor="let c of cards; let i = index"
+                [header]="c.header"
+            >
+                <p
+                    [innerHTML]="c.text"
+                    class="m-0"
+                ></p>
+            </p-card>
+            <!-- TODO make sure this is good on mobile -->
+            <div
+                *ngFor="let c of cards"
+                class="mb-5"
+            ></div>
+        </div>
+        <!-- TODO empty image slot -->
+    </div>
+    <div class="flex-1"></div>
 </div>

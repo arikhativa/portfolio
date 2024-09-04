@@ -7,6 +7,7 @@ export const about = {
         {
             header: 'so... i am a software developer',
             text: 'studied programming in infinity labs and in 42 madrid.\ni have 3 years of experience.',
+            leftImg: 'assets/images/42.png',
         },
         {
             header: 'Broadcom Inc.',
@@ -18,7 +19,7 @@ export const about = {
         },
         {
             header: 'web development',
-            text: 'i have also been making some websites as a freelancer.\ncheck them out!',
+            text: 'i have also been making some websites as a freelancer.\ncheck them out!\n(they are under the briefcase icon)',
         },
     ],
 }
