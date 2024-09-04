@@ -50,6 +50,14 @@ p-button {
     z-index: -1;
 }
 
+// Extra PrimeFlex classes
+.min-w-10rem {
+    min-width: 10rem;
+}
+.min-w-20rem {
+    min-width: 20rem;
+}
+
 // Translate
 .translate-left-50 {
     transform: translateX(-50%);
