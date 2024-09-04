@@ -14,6 +14,7 @@ export type CardMeta = {
     cardIndex: number
     type: CardKey
     textIndex: number
+    done: boolean
 }
 
 @Component({
@@ -36,7 +37,7 @@ export class AboutComponent {
     }
 
     ngAfterViewInit() {
-        this.writeAll()
+        if (!this.meta.done) this.writeAll()
     }
 
     async writeAll() {
@@ -49,6 +50,7 @@ export class AboutComponent {
             await this.writeCard(this.meta.cardIndex)
             if (!this.run) return
         }
+        this.meta.done = true
     }
 
     async writeCard(i: number) {
@@ -59,9 +61,9 @@ export class AboutComponent {
                 header: '',
                 text: '',
             })
-
             this.meta.type = 'header'
             await this.delayAppend(this.strings.cards[i].header, i, 'header')
+            await sleep(500)
             this.meta.type = 'text'
             await this.delayAppend(this.strings.cards[i].text, i, 'text')
         } else {
@@ -82,7 +84,13 @@ export class AboutComponent {
             if (!this.run) return
             const delay = Math.random() * 60 + 20
             await sleep(delay)
-            this.cards[index][type] += s[this.meta.textIndex]
+            if (!this.run) return
+
+            if ('\n' === s[this.meta.textIndex]) {
+                this.cards[index][type] += '<br>'
+            } else {
+                this.cards[index][type] += s[this.meta.textIndex]
+            }
         }
         this.meta.textIndex = 0
     }
@@ -91,5 +99,22 @@ export class AboutComponent {
         this.run = false
         this.storeService.cards = this.cards
         this.storeService.cardMeta = this.meta
+    }
+
+    skip() {
+        this.run = false
+        const c: Card[] = []
+        this.strings.cards.forEach((card, i) => {
+            c.push({
+                header: card.header,
+                text: card.text,
+            })
+        })
+        this.cards = c
+        this.meta.done = true
+    }
+
+    scrollToCenter(e: HTMLElement) {
+        e.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
 }

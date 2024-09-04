@@ -9,6 +9,7 @@ export class StoreService {
         cardIndex: 0,
         type: 'header',
         textIndex: 0,
+        done: false,
     }
 
     set cardMeta(cm: CardMeta) {
