@@ -7,7 +7,11 @@ export const about = {
         {
             header: 'so... i am a software developer',
             text: 'studied programming in infinity labs and in 42 madrid.\ni have 3 years of experience.',
-            leftImg: 'assets/images/42.png',
+            // img: {
+            //     dir: 'right',
+            //     src: 'assets/images/42.png',
+            //     alt: '42 madrid logo',
+            // },
         },
         {
             header: 'Broadcom Inc.',

@@ -5,6 +5,7 @@
         (onClick)="skip()"
         class="fixed top-0 right-0 p-5"
     ></p-button>
+    <!-- TODO maybe remove -->
     <div class="flex-1 flex justify-content-center p-5">
         <div
             *ngFor="let img of leftImages"
@@ -41,7 +42,22 @@
                 class="mb-5"
             ></div>
         </div>
-        <!-- TODO empty image slot -->
     </div>
-    <div class="flex-1"></div>
+    <!-- TODO maybe remove -->
+    <div class="flex-1 flex justify-content-center p-5">
+        <div
+            *ngFor="let img of rightImages"
+            class="w-fit"
+        >
+            <p-card>
+                <p>
+                    <img
+                        class="w-full"
+                        [src]="img.src"
+                        [alt]="img.alt"
+                    />
+                </p>
+            </p-card>
+        </div>
+    </div>
 </div>

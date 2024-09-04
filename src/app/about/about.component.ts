@@ -6,9 +6,10 @@ import { StoreService } from '../store.service'
 export type Card = {
     header: string
     text: string
+    img?: Image
 }
 
-type CardKey = keyof Card
+type CardKey = 'header' | 'text'
 
 type Image = {
     src: string
@@ -28,7 +29,7 @@ export type CardMeta = {
     styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-    readonly strings = about
+    readonly allCards: Card[] = about.cards as unknown as Card[]
     run!: boolean
     cards!: Card[]
     meta!: CardMeta
@@ -50,7 +51,7 @@ export class AboutComponent {
     async writeAll() {
         for (
             ;
-            this.meta.cardIndex < this.strings.cards.length;
+            this.meta.cardIndex < this.allCards.length;
             ++this.meta.cardIndex
         ) {
             if (!this.run) return
@@ -69,28 +70,17 @@ export class AboutComponent {
                 text: '',
             })
 
-            if (this.strings.cards[i].leftImg) {
-                this.leftImages.push({
-                    src: this.strings.cards[i].leftImg || '',
-                    alt: '',
-                })
-            }
-
             this.meta.type = 'header'
-            await this.delayAppend(this.strings.cards[i].header, i, 'header')
+            await this.delayAppend(this.allCards[i].header, i, 'header')
             await sleep(500)
             this.meta.type = 'text'
-            await this.delayAppend(this.strings.cards[i].text, i, 'text')
+            await this.delayAppend(this.allCards[i].text, i, 'text')
         } else {
             if (this.meta.type === 'header') {
-                await this.delayAppend(
-                    this.strings.cards[i].header,
-                    i,
-                    'header'
-                )
+                await this.delayAppend(this.allCards[i].header, i, 'header')
             }
             this.meta.type = 'text'
-            await this.delayAppend(this.strings.cards[i].text, i, 'text')
+            await this.delayAppend(this.allCards[i].text, i, 'text')
         }
     }
 
@@ -119,7 +109,7 @@ export class AboutComponent {
     skip() {
         this.run = false
         const c: Card[] = []
-        this.strings.cards.forEach((card, i) => {
+        this.allCards.forEach((card, i) => {
             c.push({
                 header: card.header,
                 text: card.text,
