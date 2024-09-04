@@ -5,7 +5,9 @@
         (onClick)="skip()"
         class="fixed top-0 right-0 p-5"
     ></p-button>
-    <div class="card flex flex-column gap-5 justify-content-center max-w-30rem">
+    <div
+        class="card flex flex-column gap-5 justify-content-center p-5 max-w-30rem"
+    >
         <p-card
             #pCard
             *ngFor="let c of cards; let i = index"
