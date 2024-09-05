@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { filter } from 'rxjs'
 
@@ -34,5 +34,28 @@ export class NavbarComponent {
 
     isActive(i: number) {
         return this.activeIndex === i
+    }
+
+    @HostListener('window:keydown', ['$event'])
+    handleKeyDown(event: KeyboardEvent) {
+        if (event.key === 'ArrowLeft') {
+            this.navigateLeft()
+        } else if (event.key === 'ArrowRight') {
+            this.navigateRight()
+        }
+    }
+
+    navigateLeft() {
+        if (this.activeIndex > 0) {
+            this.activeIndex--
+            this.router.navigate([this.routerLinks[this.activeIndex]])
+        }
+    }
+
+    navigateRight() {
+        if (this.activeIndex < this.routerLinks.length - 1) {
+            this.activeIndex++
+            this.router.navigate([this.routerLinks[this.activeIndex]])
+        }
     }
 }
