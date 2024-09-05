@@ -16,7 +16,8 @@ import { AccordionModule } from 'primeng/accordion'
 import { ChipModule } from 'primeng/chip'
 import { ContactComponent } from '../contact/contact.component'
 import { DividerModule } from 'primeng/divider';
-import { BadgeComponent } from '../badge/badge.component'
+import { BadgeComponent } from '../badge/badge.component';
+import { HexComponent } from '../hex/hex.component'
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -27,6 +28,7 @@ import { BadgeComponent } from '../badge/badge.component'
         ProjectsComponent,
         ContactComponent,
         BadgeComponent,
+        HexComponent,
     ],
     imports: [
         DividerModule,
