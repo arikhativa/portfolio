@@ -48,6 +48,7 @@ export const projects: {
                 'ReactNative',
                 'Prisma',
                 'GraphQL',
+                'Docker',
                 'PostgreSQL',
                 'Vue.js',
                 'Node.js',
@@ -80,7 +81,7 @@ export const projects: {
             content:
                 '<a href="https://www.milouban.com/">milouban.com</a><br><br>Milouban LTD is a company that trades with cotton linter pulp. this website serves them as a landing page and to showcase their products. written with Wordpress, and hosted on Github Pages.',
 
-            tech: ['Wordpress', 'Github Pages'],
+            tech: ['Wordpress', 'Docker', 'Github Pages'],
         },
     ],
 }
