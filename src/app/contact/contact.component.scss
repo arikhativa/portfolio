@@ -1,4 +1,18 @@
+::ng-deep .p-button {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-light);
+}
+
 ::ng-deep .p-card {
     background: var(--background);
     box-shadow: var(--box-shadow);
+}
+
+::ng-deep .p-divider.p-divider-horizontal::before {
+    border-color: var(--primary-light);
+}
+
+p {
+    pointer-events: auto;
 }

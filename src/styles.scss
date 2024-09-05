@@ -20,6 +20,7 @@
     --background: #565656;
 
     --primary: #3239ba;
+    --primary-mid: #5358c1;
     --primary-light: #8389f0;
     // TODO these are not good colors
     --background-light: rgb(255 255 255 / 25%);
@@ -40,6 +41,10 @@ body {
     pointer-events: none;
     margin: 0;
     padding: 0;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar */
+    -moz-scrollbar-width: none; /* Old Firefox versions */
 }
 
 p-button {
