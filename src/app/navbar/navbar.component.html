@@ -31,7 +31,7 @@
                 class="hex"
                 [class.active]="isActive(0)"
                 (click)="setActive(0)"
-                routerLink="/"
+                [routerLink]="routerLinks[0]"
                 d="M44.8807 75.2394L63.0533 43.7634L99.3986 43.7634L117.571 75.2394L99.3986 106.715L63.0533 106.715L44.8807 75.2394Z"
             />
             <g id="Home">
@@ -52,7 +52,7 @@
                 class="hex"
                 [class.active]="isActive(1)"
                 (click)="setActive(1)"
-                routerLink="/about"
+                [routerLink]="routerLinks[1]"
                 d="M140.881 75.226L159.053 43.75L195.399 43.75L213.571 75.226L195.399 106.702L159.053 106.702L140.881 75.226Z"
             />
             <g id="User">
@@ -74,7 +74,7 @@
                 class="hex"
                 [class.active]="isActive(2)"
                 (click)="setActive(2)"
-                routerLink="/projects"
+                [routerLink]="routerLinks[2]"
                 d="M236.881 75.226L255.053 43.75L291.399 43.75L309.571 75.226L291.399 106.702L255.053 106.702L236.881 75.226Z"
             />
             <g id="Briefcase">
@@ -95,7 +95,7 @@
                 class="hex"
                 [class.active]="isActive(3)"
                 (click)="setActive(3)"
-                routerLink="/contact"
+                [routerLink]="routerLinks[3]"
                 d="M332.881 75.226L351.053 43.75L387.399 43.75L405.571 75.226L387.399 106.702L351.053 106.702L332.881 75.226Z"
             />
             <g id="Mail">
