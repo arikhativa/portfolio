@@ -1,0 +1,22 @@
+<div class="float w-full flex justify-content-center pt-8 mt-8">
+    <p-card header="Contact me :)">
+        <p-divider />
+        <h4>Email</h4>
+        <div class="flex justify-content-between align-items-center gap-5">
+            <p class="m-0">{{ email }}</p>
+            <p-button
+                icon="pi pi-envelope"
+                (onClick)="redirectToEmail()"
+            ></p-button>
+        </div>
+        <p-divider />
+        <h4>CV</h4>
+        <div class="flex justify-content-between align-items-center gap-5">
+            <p class="m-0">{{ file }}</p>
+            <p-button
+                icon="pi pi-download"
+                (onClick)="downloadFile()"
+            ></p-button>
+        </div>
+    </p-card>
+</div>

@@ -14,7 +14,8 @@ import { ButtonModule } from 'primeng/button'
 import { ProjectsComponent } from '../projects/projects.component'
 import { AccordionModule } from 'primeng/accordion'
 import { ChipModule } from 'primeng/chip'
-
+import { ContactComponent } from '../contact/contact.component'
+import { DividerModule } from 'primeng/divider'
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -23,8 +24,10 @@ import { ChipModule } from 'primeng/chip'
         RabbyComponent,
         AboutComponent,
         ProjectsComponent,
+        ContactComponent,
     ],
     imports: [
+        DividerModule,
         ChipModule,
         AccordionModule,
         ButtonModule,
