@@ -1,7 +1,5 @@
-:host {
-    pointer-events: all;
-}
 ::ng-deep .p-card {
+    pointer-events: all;
     background: var(--background);
     box-shadow: var(--box-shadow);
 }

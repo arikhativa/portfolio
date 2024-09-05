@@ -35,22 +35,52 @@ export const projects: {
 } = {
     tabs: [
         {
+            title: 'Beit Tawfik Toubi',
+            content:
+                '<a href="https://beittawfiktoubi.com">beittawfiktoubi.com</a><br><br>Beit Tawfik Toubi is a website for the small hosting business. written in Angular and hosted on Github Pages.',
+            tech: ['Angular', 'Typescript', 'Github Pages'],
+        },
+        {
             title: 'Avoda+',
             content:
-                'Avoda+ is a mobile app for the workers of sofi cooperative.\n\ni am working on it as a full stack developer.\n\nthe app is built with flutter and the backend is in node.js.\n\nthe app is still in development and will be released soon.',
-            tech: ['Flutter', 'Node.js'],
+                '<a href="https://www.sofi.coop/project/avoda-plus">sofi.coop</a><br><br>Avoda+ is a mobile app that helps teenagers with their first steps in the job market. I worked on the app as a full-stack developer.',
+            tech: [
+                'ReactNative',
+                'Prisma',
+                'GraphQL',
+                'PostgreSQL',
+                'Vue.js',
+                'Node.js',
+                'Typescript',
+            ],
         },
         {
-            title: 'Provisioning Service',
+            title: 'Naama Ofir',
             content:
-                'The provisioning service is a service that provisions new environments for the ELK stack.\n\nthe service is written in Golang and uses the ELK stack to provision the new environments.\n\nthe service is used by the developers to create new environments for testing and development.',
-            tech: ['Golang', 'ELK Stack'],
+                '<a href="https://naamaofir.com/">naamaofir.com</a><br><br>Landing page for Naam Aofir (Animator). written in Angular and hosted on Github Pages.',
+
+            tech: ['Angular', 'Typescript', 'Github Pages'],
         },
         {
-            title: 'Web Development',
+            title: 'Oded Rabby',
             content:
-                'I have been making websites for a while now.\n\ni have made websites for small businesses, artists, and more.\n\ni use technologies like HTML, CSS, JavaScript, and React to build the websites.\n\ncheck them out!',
-            tech: ['Golang', 'ELK Stack'],
+                '<a href="https://odedrabby.com/">odedrabby.com</a><br><br>Landing page for Oded Rabby. since he is a musician, I created a custom music player to the page. written in Angular and hosted on Github Pages.',
+
+            tech: ['Angular', 'Typescript', 'Github Pages'],
+        },
+        {
+            title: 'shemzmani',
+            content:
+                "<a href=\"https://shemzmani.space/\">shemzmani.space</a><br><br>Landing page for Gal Cohen Paraira's new album 'shemzmani'. written in Angular and hosted on Github Pages.",
+
+            tech: ['Angular', 'Typescript', 'Github Pages'],
+        },
+        {
+            title: 'Milouban TLD',
+            content:
+                '<a href="https://www.milouban.com/">milouban.com</a><br><br>Milouban LTD is a company that trades with cotton linter pulp. this website serves them as a landing page and to showcase their products. written with Wordpress, and hosted on Github Pages.',
+
+            tech: ['Wordpress', 'Github Pages'],
         },
     ],
 }

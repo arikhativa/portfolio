@@ -1,17 +1,19 @@
 <div class="w-full flex justify-content-center p-5">
-    <p-card class="max-w-30rem">
-        <div class="flex justify-content-center">
-            <p-accordion>
+    <p-card>
+        <div class="flex justify-content-center max-w-30rem">
+            <p-accordion class="w-full">
                 <p-accordionTab
                     [header]="tab.title"
                     *ngFor="let tab of tabs"
                 >
-                    <p class="m-0">
-                        {{ tab.content }}
-                    </p>
+                    <a href=""></a>
+                    <p
+                        class="m-0"
+                        [innerHTML]="tab.content"
+                    ></p>
                     <div>
                         <h4>Tech</h4>
-                        <div class="flex gap-2">
+                        <div class="flex gap-2 flex-wrap">
                             <p-chip
                                 *ngFor="let t of tab.tech"
                                 [label]="t"
