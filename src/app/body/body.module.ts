@@ -13,6 +13,8 @@ import { CardModule } from 'primeng/card'
 import { ButtonModule } from 'primeng/button'
 import { ProjectsComponent } from '../projects/projects.component'
 import { AccordionModule } from 'primeng/accordion'
+import { ChipModule } from 'primeng/chip'
+
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -23,6 +25,7 @@ import { AccordionModule } from 'primeng/accordion'
         ProjectsComponent,
     ],
     imports: [
+        ChipModule,
         AccordionModule,
         ButtonModule,
         CardModule,

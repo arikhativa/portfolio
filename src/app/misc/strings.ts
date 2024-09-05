@@ -1,3 +1,5 @@
+import { Tab } from '../projects/projects.component'
+
 export const about = {
     cards: [
         {
@@ -24,6 +26,31 @@ export const about = {
         {
             header: 'web development',
             text: 'i have also been making some websites as a freelancer.\ncheck them out!\n(they are under the briefcase icon)',
+        },
+    ],
+}
+
+export const projects: {
+    tabs: Tab[]
+} = {
+    tabs: [
+        {
+            title: 'Avoda+',
+            content:
+                'Avoda+ is a mobile app for the workers of sofi cooperative.\n\ni am working on it as a full stack developer.\n\nthe app is built with flutter and the backend is in node.js.\n\nthe app is still in development and will be released soon.',
+            tech: ['Flutter', 'Node.js'],
+        },
+        {
+            title: 'Provisioning Service',
+            content:
+                'The provisioning service is a service that provisions new environments for the ELK stack.\n\nthe service is written in Golang and uses the ELK stack to provision the new environments.\n\nthe service is used by the developers to create new environments for testing and development.',
+            tech: ['Golang', 'ELK Stack'],
+        },
+        {
+            title: 'Web Development',
+            content:
+                'I have been making websites for a while now.\n\ni have made websites for small businesses, artists, and more.\n\ni use technologies like HTML, CSS, JavaScript, and React to build the websites.\n\ncheck them out!',
+            tech: ['Golang', 'ELK Stack'],
         },
     ],
 }
