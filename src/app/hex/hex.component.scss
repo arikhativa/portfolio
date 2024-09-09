@@ -1,9 +1,15 @@
-#inner path {
+svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#inner {
     fill: var(--primary);
     fill-opacity: 0.8;
 }
 
-#outer path {
+#outer {
     stroke: var(--primary-light);
     stroke-width: 2;
 }

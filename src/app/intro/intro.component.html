@@ -3,7 +3,12 @@
         <app-yoav class="w-full h-auto float"></app-yoav>
         <app-rabby class="w-full h-auto float animation-delay-1000"></app-rabby>
     </div>
-    <div class="flex justify-content-between gap-5">
-        <app-badge></app-badge>
+    <div
+        class="flex justify-content-between align-items-center gap-1 w-full max-w-35rem"
+    >
+        <app-badge
+            *ngFor="let b of badges"
+            class="w-full h-auto"
+        ></app-badge>
     </div>
 </div>
