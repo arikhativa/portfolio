@@ -48,14 +48,18 @@ export class NavbarComponent {
     navigateLeft() {
         if (this.activeIndex > 0) {
             this.activeIndex--
-            this.router.navigate([this.routerLinks[this.activeIndex]])
+            this.router.navigate([this.routerLinks[this.activeIndex]], {
+                state: { direction: 1 },
+            })
         }
     }
 
     navigateRight() {
         if (this.activeIndex < this.routerLinks.length - 1) {
             this.activeIndex++
-            this.router.navigate([this.routerLinks[this.activeIndex]])
+            this.router.navigate([this.routerLinks[this.activeIndex]], {
+                state: { direction: -1 },
+            })
         }
     }
 }

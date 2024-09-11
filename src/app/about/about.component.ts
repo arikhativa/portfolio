@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChildren } from '@angular/core'
+import { Component } from '@angular/core'
 import { sleep } from '../misc/utils'
 import { about } from '../misc/strings'
 import { StoreService } from '../store.service'

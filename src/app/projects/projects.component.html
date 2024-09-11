@@ -1,7 +1,10 @@
 <div class="float w-full flex justify-content-center p-5">
     <p-card>
         <div class="flex justify-content-center max-w-30rem">
-            <p-accordion class="w-full">
+            <p-accordion
+                class="w-full"
+                [activeIndex]="0"
+            >
                 <p-accordionTab
                     [header]="tab.title"
                     *ngFor="let tab of tabs"

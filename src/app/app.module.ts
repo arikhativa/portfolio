@@ -7,6 +7,7 @@ import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BodyModule } from './body/body.module'
 import { StoreService } from './store.service'
+import { RouterLink, RouterOutlet } from '@angular/router'
 
 @NgModule({
     declarations: [AppComponent],
@@ -15,6 +16,8 @@ import { StoreService } from './store.service'
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
+        RouterLink,
+        RouterOutlet,
     ],
     providers: [StoreService],
     bootstrap: [AppComponent],

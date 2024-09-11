@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { ChildrenOutletContexts } from '@angular/router'
+import { slideInAnimation } from './animations'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [slideInAnimation],
 })
 export class AppComponent {
-  title = 'portfolio';
+    title = 'portfolio'
+
+    constructor(private contexts: ChildrenOutletContexts) {}
+
+    ngAfterViewInit() {}
+
+    getRouteAnimationData() {
+        return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+            'animation'
+        ]
+    }
 }

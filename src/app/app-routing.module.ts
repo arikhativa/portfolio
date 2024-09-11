@@ -6,10 +6,30 @@ import { ProjectsComponent } from './projects/projects.component'
 import { ContactComponent } from './contact/contact.component'
 
 const routes: Routes = [
-    { path: '', component: IntroComponent },
-    { path: 'about', component: AboutComponent, pathMatch: 'full' },
-    { path: 'projects', component: ProjectsComponent, pathMatch: 'full' },
-    { path: 'contact', component: ContactComponent, pathMatch: 'full' },
+    {
+        path: '',
+        component: IntroComponent,
+        data: { animation: '0' },
+    },
+
+    {
+        path: 'about',
+        component: AboutComponent,
+        data: { animation: '1' },
+    },
+
+    {
+        path: 'projects',
+        component: ProjectsComponent,
+        pathMatch: 'full',
+        data: { animation: '2' },
+    },
+    {
+        path: 'contact',
+        component: ContactComponent,
+        pathMatch: 'full',
+        data: { animation: '3' },
+    },
     { path: '**', component: IntroComponent },
 ]
 
