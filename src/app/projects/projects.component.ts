@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, HostListener } from '@angular/core'
 import { projects } from '../misc/strings'
 
 export type Tab = {
@@ -14,4 +14,5 @@ export type Tab = {
 })
 export class ProjectsComponent {
     tabs: Tab[] = projects.tabs
+    activeIndex: number | null = null
 }

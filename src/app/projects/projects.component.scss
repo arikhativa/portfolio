@@ -23,3 +23,9 @@
 ::ng-deep .p-accordion p-accordiontab:last-of-type .p-accordion-tab {
     border-bottom: 0 none;
 }
+
+::ng-deep
+    .p-accordion-tab:not(.p-accordion-tab-active)
+    .p-toggleable-content:not(.ready) {
+    height: 0;
+}
