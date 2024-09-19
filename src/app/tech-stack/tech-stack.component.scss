@@ -1,0 +1,41 @@
+:host {
+    --gep: 1rem;
+}
+
+.scroller {
+    max-width: 40rem;
+    margin: auto 5rem;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+}
+
+.inner-con {
+    display: flex;
+    gap: var(--gep);
+    padding-block: 1rem;
+    animation: move 120s linear infinite;
+    width: max-content;
+}
+
+@keyframes move {
+    100% {
+        transform: translateX(calc(-50% - 0.5rem));
+    }
+}
+
+p-chip {
+    min-width: fit-content;
+}
