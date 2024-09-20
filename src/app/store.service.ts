@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Card, CardMeta } from '../app/about/about.component'
+import { YoavColors } from './yoav/yoav.component'
+import { fills, strokes } from './misc/colorChange'
 
 @Injectable({
     providedIn: 'root',
@@ -28,5 +30,20 @@ export class StoreService {
 
     get cards(): Card[] {
         return this._cards
+    }
+
+    private _yoav: YoavColors = {
+        y: { fill: fills[0], stroke: strokes[0] },
+        o: { fill: fills[0], stroke: strokes[0] },
+        a: { fill: fills[0], stroke: strokes[0] },
+        v: { fill: fills[0], stroke: strokes[0] },
+    }
+
+    set yoav(yoav: YoavColors) {
+        this._yoav = yoav
+    }
+
+    get yoav(): YoavColors {
+        return this._yoav
     }
 }

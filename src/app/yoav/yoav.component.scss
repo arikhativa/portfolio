@@ -5,8 +5,9 @@ svg {
 }
 
 path {
-    fill: var(--primary);
+    pointer-events: auto;
+    cursor: pointer;
     fill-opacity: 0.8;
-    stroke: var(--primary-light);
     stroke-width: 1.5;
+    transition: fill 1s ease, stroke 1s ease;
 }
