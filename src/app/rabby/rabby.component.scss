@@ -8,9 +8,7 @@ path {
     pointer-events: auto;
     cursor: pointer;
 
-    fill: var(--primary);
     fill-opacity: 0.8;
-    stroke: var(--primary-light);
     stroke-width: 1.5;
 
     transition: fill 1s ease, stroke 1s ease;
