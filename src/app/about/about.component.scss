@@ -2,3 +2,21 @@
     background: var(--background);
     box-shadow: var(--box-shadow);
 }
+
+::ng-deep .p-button {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-light);
+}
+
+p-button {
+    transition: opacity 1s ease;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}

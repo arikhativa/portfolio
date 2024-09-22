@@ -106,6 +106,13 @@ export class AboutComponent {
         this.storeService.cardMeta = this.meta
     }
 
+    showButton() {
+        if (this.meta.done) return false
+        if (this.meta.cardIndex > 0) return true
+        if (this.meta.textIndex > 10) return true
+        return false
+    }
+
     skip() {
         this.run = false
         const c: Card[] = []
