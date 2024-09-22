@@ -45,6 +45,10 @@ export class RabbyComponent {
             const stroke = getNextStroke(index)
             this.rabbyColors[entry].fill = fill
             this.rabbyColors[entry].stroke = stroke
+            this.rabbyColors[entry].jump = true
+            setTimeout(() => {
+                this.rabbyColors[entry].jump = false
+            }, 100)
         }
     }
 }

@@ -44,6 +44,10 @@ export class YoavComponent {
             const stroke = getNextStroke(index)
             this.yoavColors[entry].fill = fill
             this.yoavColors[entry].stroke = stroke
+            this.yoavColors[entry].jump = true
+            setTimeout(() => {
+                this.yoavColors[entry].jump = false
+            }, 100)
         }
     }
 }

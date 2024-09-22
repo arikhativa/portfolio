@@ -34,10 +34,10 @@ export class StoreService {
     }
 
     private _yoav: YoavColors = {
-        y: { fill: fills[0], stroke: strokes[0] },
-        o: { fill: fills[0], stroke: strokes[0] },
-        a: { fill: fills[0], stroke: strokes[0] },
-        v: { fill: fills[0], stroke: strokes[0] },
+        y: { fill: fills[0], stroke: strokes[0], jump: false },
+        o: { fill: fills[0], stroke: strokes[0], jump: false },
+        a: { fill: fills[0], stroke: strokes[0], jump: false },
+        v: { fill: fills[0], stroke: strokes[0], jump: false },
     }
 
     set yoav(yoav: YoavColors) {
@@ -49,11 +49,11 @@ export class StoreService {
     }
 
     private _rabby: RabbyColors = {
-        r: { fill: fills[0], stroke: strokes[0] },
-        a: { fill: fills[0], stroke: strokes[0] },
-        b0: { fill: fills[0], stroke: strokes[0] },
-        b1: { fill: fills[0], stroke: strokes[0] },
-        y: { fill: fills[0], stroke: strokes[0] },
+        r: { fill: fills[0], stroke: strokes[0], jump: false },
+        a: { fill: fills[0], stroke: strokes[0], jump: false },
+        b0: { fill: fills[0], stroke: strokes[0], jump: false },
+        b1: { fill: fills[0], stroke: strokes[0], jump: false },
+        y: { fill: fills[0], stroke: strokes[0], jump: false },
     }
 
     set rabby(rabby: RabbyColors) {

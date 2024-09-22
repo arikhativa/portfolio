@@ -1,6 +1,7 @@
 export interface Color {
     fill: string
     stroke: string
+    jump: boolean
 }
 
 export const fills: string[] = [
