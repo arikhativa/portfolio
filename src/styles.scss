@@ -108,7 +108,6 @@ p-button {
 
 @keyframes slideUpNavbar {
     from {
-        background-color: red;
         transform: translate(-50%, 100%);
     }
     to {
@@ -117,7 +116,6 @@ p-button {
 }
 
 .slide-up-navbar {
-    background-color: blue;
     animation: slideUpNavbar 0.5s ease forwards;
 }
 
