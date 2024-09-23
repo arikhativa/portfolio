@@ -44,6 +44,11 @@ body {
     -moz-scrollbar-width: none; /* Old Firefox versions */
 }
 
+// Hide outline since Opera has a default outline on click
+* {
+    outline: none;
+}
+
 p-button {
     pointer-events: auto;
 }
@@ -103,6 +108,7 @@ p-button {
 
 @keyframes slideUpNavbar {
     from {
+        background-color: red;
         transform: translate(-50%, 100%);
     }
     to {
@@ -111,5 +117,19 @@ p-button {
 }
 
 .slide-up-navbar {
+    background-color: blue;
     animation: slideUpNavbar 0.5s ease forwards;
+}
+
+@keyframes slideLeftNavbar {
+    from {
+        transform: translate(100%, 50%);
+    }
+    to {
+        transform: translate(0, 50%);
+    }
+}
+
+.slide-left-navbar {
+    animation: slideLeftNavbar 0.5s ease forwards;
 }

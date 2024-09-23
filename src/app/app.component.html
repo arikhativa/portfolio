@@ -7,5 +7,10 @@
 </div>
 <app-background class="fixed top-0 z--1"></app-background>
 <app-navbar
-    class="slide-up-navbar fixed bottom-0 left-50 translate-left-50 pb-5 min-w-20rem"
+    class="fixed pb-5 min-w-20rem z-5"
+    [ngClass]="
+        isSideways
+            ? 'bottom-50 right-0 slide-left-navbar'
+            : ' bottom-0 left-50 slide-up-navbar'
+    "
 ></app-navbar>

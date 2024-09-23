@@ -8,6 +8,8 @@ import { filter } from 'rxjs'
     styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+    // TODO
+    isSideways: boolean = false
     activeIndex: number = 0
     routerLinks = ['/', '/about', '/projects', '/contact']
 

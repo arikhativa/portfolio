@@ -11,6 +11,9 @@ import { slideInAnimation } from './animations'
 export class AppComponent {
     title = 'portfolio'
 
+    // TODO
+    isSideways: boolean = false
+
     constructor(private contexts: ChildrenOutletContexts) {}
 
     // TODO This is been called too many time (should be only on project page)

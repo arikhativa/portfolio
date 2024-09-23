@@ -1,4 +1,5 @@
 <svg
+    *ngIf="!isSideways"
     class="scale w-full"
     height="150"
     viewBox="0 0 450 150"
@@ -159,6 +160,177 @@
             <rect
                 width="450"
                 height="150"
+                fill="white"
+            />
+        </clipPath>
+    </defs>
+</svg>
+
+<!-- Sideways -->
+<svg
+    *ngIf="isSideways"
+    class="scale w-full"
+    height="420"
+    viewBox="0 0 128 420"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g
+        id="exported side"
+        clip-path="url(#clip0_259_58)"
+    >
+        <g
+            id="bar"
+            filter="url(#filter0_d_259_58)"
+        >
+            <path
+                d="M29.375 35.7836L66.0756 14.5945L102.776 35.7837L102.776 366.894L66.0755 388.083L29.3749 366.894L29.375 35.7836Z"
+                fill="#3239BA"
+                fill-opacity="0.8"
+                shape-rendering="crispEdges"
+            />
+            <path
+                d="M28.875 34.9176L28.3751 35.2063L28.375 35.7836L28.3749 366.894L28.3749 367.471L28.8749 367.76L65.5755 388.949L66.0755 389.238L66.5755 388.949L103.276 367.76L103.776 367.471L103.776 366.894L103.776 35.7837L103.776 35.2064L103.276 34.9177L66.5756 13.7285L66.0756 13.4398L65.5756 13.7285L28.875 34.9176Z"
+                stroke="#8389F0"
+                stroke-opacity="0.8"
+                stroke-width="2"
+                shape-rendering="crispEdges"
+            />
+        </g>
+        <g
+            id="b4"
+            class="hex-con"
+        >
+            <path
+                id="hex4"
+                class="hex"
+                [class.active]="isActive(3)"
+                (click)="setActive(3)"
+                [routerLink]="routerLinks[3]"
+                d="M66.226 381.571L34.75 363.399L34.75 327.053L66.226 308.881L97.7019 327.053L97.7019 363.399L66.226 381.571Z"
+            />
+            <g id="Mail">
+                <path
+                    class="icon"
+                    d="M80.0833 336.75C80.0833 335.146 78.7708 333.833 77.1666 333.833H53.8333C52.2291 333.833 50.9166 335.146 50.9166 336.75M80.0833 336.75V354.25C80.0833 355.854 78.7708 357.167 77.1666 357.167H53.8333C52.2291 357.167 50.9166 355.854 50.9166 354.25V336.75M80.0833 336.75L65.5 346.958L50.9166 336.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </g>
+        </g>
+        <g
+            id="b3"
+            class="hex-con"
+        >
+            <path
+                id="hex3"
+                class="hex"
+                [class.active]="isActive(2)"
+                (click)="setActive(2)"
+                [routerLink]="routerLinks[2]"
+                d="M66.226 285.571L34.75 267.399L34.75 231.053L66.226 212.881L97.7019 231.053L97.7019 267.399L66.226 285.571Z"
+            />
+            <g id="Briefcase">
+                <path
+                    class="icon"
+                    d="M71.3333 262.625V239.292C71.3333 238.518 71.026 237.776 70.479 237.229C69.932 236.682 69.1902 236.375 68.4166 236.375H62.5833C61.8097 236.375 61.0679 236.682 60.5209 237.229C59.9739 237.776 59.6666 238.518 59.6666 239.292V262.625M53.8333 242.208H77.1666C78.7775 242.208 80.0833 243.514 80.0833 245.125V259.708C80.0833 261.319 78.7775 262.625 77.1666 262.625H53.8333C52.2225 262.625 50.9166 261.319 50.9166 259.708V245.125C50.9166 243.514 52.2225 242.208 53.8333 242.208Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </g>
+        </g>
+        <g
+            id="b2"
+            class="hex-con"
+        >
+            <path
+                id="hex2"
+                class="hex"
+                [class.active]="isActive(1)"
+                (click)="setActive(1)"
+                [routerLink]="routerLinks[1]"
+                d="M66.226 189.571L34.75 171.399L34.75 135.053L66.226 116.881L97.7019 135.053L97.7019 171.399L66.226 189.571Z"
+            />
+            <g id="User">
+                <path
+                    class="icon"
+                    d="M77.1667 166.625V163.708C77.1667 162.161 76.5521 160.678 75.4582 159.584C74.3642 158.49 72.8805 157.875 71.3334 157.875H59.6667C58.1196 157.875 56.6359 158.49 55.5419 159.584C54.448 160.678 53.8334 162.161 53.8334 163.708V166.625M71.3334 146.208C71.3334 149.43 68.7217 152.042 65.5 152.042C62.2784 152.042 59.6667 149.43 59.6667 146.208C59.6667 142.987 62.2784 140.375 65.5 140.375C68.7217 140.375 71.3334 142.987 71.3334 146.208Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </g>
+        </g>
+        <g
+            id="b1"
+            class="hex-con"
+        >
+            <path
+                id="hex1"
+                class="hex"
+                [class.active]="isActive(0)"
+                (click)="setActive(0)"
+                [routerLink]="routerLinks[0]"
+                d="M66.226 93.5712L34.75 75.3986L34.75 39.0533L66.226 20.8807L97.7019 39.0533L97.7019 75.3986L66.226 93.5712Z"
+            />
+            <g id="Home">
+                <path
+                    class="icon"
+                    d="M61.125 72.0833V57.5H69.875V72.0833M52.375 53.125L65.5 42.9166L78.625 53.125V69.1666C78.625 69.9402 78.3177 70.682 77.7707 71.229C77.2237 71.776 76.4819 72.0833 75.7083 72.0833H55.2917C54.5181 72.0833 53.7763 71.776 53.2293 71.229C52.6823 70.682 52.375 69.9402 52.375 69.1666V53.125Z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </g>
+        </g>
+    </g>
+    <defs>
+        <filter
+            id="filter0_d_259_58"
+            x="13.375"
+            y="12.2852"
+            width="91.4012"
+            height="400.107"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+        >
+            <feFlood
+                flood-opacity="0"
+                result="BackgroundImageFix"
+            />
+            <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+            />
+            <feOffset
+                dx="-11"
+                dy="19"
+            />
+            <feGaussianBlur stdDeviation="1.5" />
+            <feComposite
+                in2="hardAlpha"
+                operator="out"
+            />
+            <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+            />
+            <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_259_58"
+            />
+            <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_259_58"
+                result="shape"
+            />
+        </filter>
+        <clipPath id="clip0_259_58">
+            <rect
+                width="128"
+                height="420"
                 fill="white"
             />
         </clipPath>
