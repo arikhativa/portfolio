@@ -1,4 +1,5 @@
 <div
+    class="fade-in"
     [@routeAnimations]="getRouteAnimationData()"
     (@routeAnimations.done)="onAnimationDone()"
 >
@@ -6,5 +7,5 @@
 </div>
 <app-background class="fixed top-0 z--1"></app-background>
 <app-navbar
-    class="fixed bottom-0 left-50 translate-left-50 pb-5 min-w-20rem"
+    class="slide-up-navbar fixed bottom-0 left-50 translate-left-50 pb-5 min-w-20rem"
 ></app-navbar>

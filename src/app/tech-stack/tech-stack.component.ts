@@ -28,6 +28,7 @@ export class TechStackComponent {
         'gRPC',
         'Prometheus',
         'Grafana',
+        'GithubPages',
         'Nginx',
     ]
 }

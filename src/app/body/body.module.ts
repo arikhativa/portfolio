@@ -16,8 +16,6 @@ import { AccordionModule } from 'primeng/accordion'
 import { ChipModule } from 'primeng/chip'
 import { ContactComponent } from '../contact/contact.component'
 import { DividerModule } from 'primeng/divider'
-import { BadgeComponent } from '../badge/badge.component'
-import { HexComponent } from '../hex/hex.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component'
 
 @NgModule({
@@ -29,8 +27,6 @@ import { TechStackComponent } from '../tech-stack/tech-stack.component'
         AboutComponent,
         ProjectsComponent,
         ContactComponent,
-        BadgeComponent,
-        HexComponent,
         TechStackComponent,
     ],
     imports: [
