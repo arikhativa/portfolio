@@ -1,17 +1,26 @@
-import { Component, HostListener } from '@angular/core'
+import { ChangeDetectorRef, Component, HostListener } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
-import { slideInAnimation } from './animations'
+import { animations } from './animations'
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    animations: [slideInAnimation],
+    animations: [animations],
 })
 export class AppComponent {
     title = 'portfolio'
-
+    top!: string
+    left!: string
     isSideways: boolean = this.getIsSideways()
+
+    constructor(private cdr: ChangeDetectorRef) {}
+
+    ngAfterViewInit() {
+        this.setTop()
+        this.setLeft()
+        this.cdr.detectChanges()
+    }
 
     @HostListener('@routeAnimations.done')
     onAnimationDone() {
@@ -25,13 +34,16 @@ export class AppComponent {
     }
 
     getRouteAnimationData(outlet: RouterOutlet) {
-        if (!this.isDesktop()) return ''
+        if (!this.isDesktop()) return outlet.activatedRouteData['fadeIn']
         return outlet.activatedRouteData['animation']
     }
 
     @HostListener('window:resize', ['$event'])
     onResize(_event: Event) {
         this.isSideways = this.getIsSideways()
+        this.setTop()
+        this.setLeft()
+        this.cdr.detectChanges()
     }
 
     isDesktop() {
@@ -47,25 +59,26 @@ export class AppComponent {
         return false
     }
 
-    get top(): string {
+    setTop() {
         const height = window.innerHeight
 
         if (this.isSideways) {
-            return `${height / 2}px`
+            this.top = `${height / 2}px`
+        } else {
+            this.top = `${height - 200}px`
         }
-
-        return `${height - 200}px`
     }
 
-    get left(): string {
+    setLeft() {
         const elem = document.getElementById('navbar')
-        if (!elem) return '0px'
+        if (!elem) return
         const rect = elem.getBoundingClientRect()
         const elemWidth = rect.width
         const width = window.innerWidth
         if (this.isSideways) {
-            return `${width - elemWidth}px`
+            this.left = `${width - elemWidth}px`
+        } else {
+            this.left = `${width / 2}px`
         }
-        return `${width / 2}px`
     }
 }

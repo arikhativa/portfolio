@@ -9,26 +9,26 @@ const routes: Routes = [
     {
         path: '',
         component: IntroComponent,
-        data: { animation: '0' },
+        data: { animation: '0', fadeIn: 'a' },
     },
 
     {
         path: 'about',
         component: AboutComponent,
-        data: { animation: '1' },
+        data: { animation: '1', fadeIn: 'b' },
     },
 
     {
         path: 'projects',
         component: ProjectsComponent,
         pathMatch: 'full',
-        data: { animation: '2' },
+        data: { animation: '2', fadeIn: 'c' },
     },
     {
         path: 'contact',
         component: ContactComponent,
         pathMatch: 'full',
-        data: { animation: '3' },
+        data: { animation: '3', fadeIn: 'd' },
     },
     { path: '**', component: IntroComponent },
 ]
