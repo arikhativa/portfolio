@@ -1,6 +1,6 @@
-import { Component, HostListener } from '@angular/core'
-import { ChildrenOutletContexts } from '@angular/router'
-import { slideInAnimation } from './animations'
+import { Component, HostBinding, HostListener } from '@angular/core'
+import { ChildrenOutletContexts, Route, RouterOutlet } from '@angular/router'
+import { fadeIn, slideIn, slideInAnimation } from './animations'
 
 @Component({
     selector: 'app-root',
@@ -12,9 +12,7 @@ export class AppComponent {
     title = 'portfolio'
 
     // TODO
-    isSideways: boolean = false
-
-    constructor(private contexts: ChildrenOutletContexts) {}
+    isSideways: boolean = this.getIsSideways()
 
     // TODO This is been called too many time (should be only on project page)
     @HostListener('@routeAnimations.done')
@@ -25,9 +23,47 @@ export class AppComponent {
         })
     }
 
-    getRouteAnimationData() {
-        return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
-            'animation'
-        ]
+    getRouteAnimationData(outlet: RouterOutlet) {
+        return outlet.activatedRouteData['animation']
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(_event: Event) {
+        this.isSideways = this.getIsSideways()
+    }
+
+    isDesktop() {
+        return window.innerWidth > 1281
+    }
+
+    private getIsSideways(): boolean {
+        if (this.isDesktop()) return false
+        if (window.innerWidth > window.innerHeight) {
+            if (window.innerWidth < 600) return false
+            return true
+        }
+        return false
+    }
+
+    get top(): string {
+        const height = window.innerHeight
+
+        if (this.isSideways) {
+            return `${height / 2}px`
+        }
+
+        return `${height - 200}px`
+    }
+
+    get left(): string {
+        const elem = document.getElementById('navbar')
+        if (!elem) return '0px'
+        const rect = elem.getBoundingClientRect()
+        const elemWidth = rect.width
+        const width = window.innerWidth
+        if (this.isSideways) {
+            return `${width - elemWidth}px`
+        }
+        return `${width / 2}px`
     }
 }

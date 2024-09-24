@@ -1,16 +1,20 @@
-<div
-    class="fade-in"
-    [@routeAnimations]="getRouteAnimationData()"
+<main
+    class="relative"
+    [@routeAnimations]="getRouteAnimationData(outlet)"
     (@routeAnimations.done)="onAnimationDone()"
 >
-    <router-outlet></router-outlet>
-</div>
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>
 <app-background class="fixed top-0 z--1"></app-background>
 <app-navbar
-    class="fixed pb-5 min-w-20rem z-5"
+    id="navbar"
+    [isSideways]="isSideways"
+    class="fixed"
+    [style.top]="top"
+    [style.left]="left"
     [ngClass]="
         isSideways
-            ? 'bottom-50 right-0 slide-left-navbar'
-            : ' bottom-0 left-50 slide-up-navbar'
+            ? 'slide-left-navbar min-h-10rem h-full pt-8 pb-8'
+            : ' slide-up-navbar min-w-20rem pb-5'
     "
 ></app-navbar>

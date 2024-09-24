@@ -57,7 +57,27 @@ p-button {
     z-index: -1;
 }
 
+.bg-blue {
+    background-color: lightblue;
+}
+
+.bg-red {
+    background-color: lightpink;
+}
+
+.bg-green {
+    background-color: lightgreen;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
 // Extra PrimeFlex classes
+.min-h-10rem {
+    min-height: 10rem;
+}
+
 .min-w-10rem {
     min-width: 10rem;
 }
@@ -121,10 +141,10 @@ p-button {
 
 @keyframes slideLeftNavbar {
     from {
-        transform: translate(100%, 50%);
+        transform: translate(100%, -50%);
     }
     to {
-        transform: translate(0, 50%);
+        transform: translate(0, -50%);
     }
 }
 

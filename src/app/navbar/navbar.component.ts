@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core'
+import { Component, HostBinding, HostListener, Input } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { filter } from 'rxjs'
 
@@ -8,8 +8,7 @@ import { filter } from 'rxjs'
     styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-    // TODO
-    isSideways: boolean = false
+    @Input() isSideways!: boolean
     activeIndex: number = 0
     routerLinks = ['/', '/about', '/projects', '/contact']
 
