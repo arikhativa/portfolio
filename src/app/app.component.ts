@@ -1,6 +1,6 @@
-import { Component, HostBinding, HostListener } from '@angular/core'
-import { ChildrenOutletContexts, Route, RouterOutlet } from '@angular/router'
-import { fadeIn, slideIn, slideInAnimation } from './animations'
+import { Component, HostListener } from '@angular/core'
+import { RouterOutlet } from '@angular/router'
+import { slideInAnimation } from './animations'
 
 @Component({
     selector: 'app-root',
@@ -11,19 +11,21 @@ import { fadeIn, slideIn, slideInAnimation } from './animations'
 export class AppComponent {
     title = 'portfolio'
 
-    // TODO
     isSideways: boolean = this.getIsSideways()
 
-    // TODO This is been called too many time (should be only on project page)
     @HostListener('@routeAnimations.done')
     onAnimationDone() {
-        const a = document.querySelectorAll('.p-toggleable-content')
-        a.forEach((el) => {
-            el.classList.add('ready')
-        })
+        const url = window.location.href.split('/').pop()
+        if (url === 'projects') {
+            const a = document.querySelectorAll('.p-toggleable-content')
+            a.forEach((el) => {
+                el.classList.add('ready')
+            })
+        }
     }
 
     getRouteAnimationData(outlet: RouterOutlet) {
+        if (!this.isDesktop()) return ''
         return outlet.activatedRouteData['animation']
     }
 

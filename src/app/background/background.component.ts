@@ -1,13 +1,5 @@
 import { CommonModule } from '@angular/common'
-import {
-    Component,
-    ElementRef,
-    HostListener,
-    Inject,
-    numberAttribute,
-    Renderer2,
-    ViewChild,
-} from '@angular/core'
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core'
 
 @Component({
     selector: 'app-background',
@@ -32,21 +24,27 @@ export class BackgroundComponent {
     constructor(private el: ElementRef, private renderer: Renderer2) {}
 
     ngOnInit() {
-        // TODO
-        // const aaValue = getComputedStyle(
-        //     this.el.nativeElement
-        // ).getPropertyValue('--aa');
-        // console.log(aaValue);
+        this.setBackground()
+    }
 
-        const len = 100 // TODO maybe too much
-        this.rows = generateRandomNumbers(len, 100)
-        this.items = generateRandomNumbers(len, 100)
+    @HostListener('window:resize', ['$event'])
+    onResize(_event: Event) {
+        this.setBackground()
     }
 
     @HostListener('window:scroll', ['$event'])
     onWindowScroll(event: Event) {
         const scrollTop = window.scrollY / 4 || 0
         this.el.nativeElement.style.transform = `translateY(-${scrollTop}px)`
+    }
+
+    setBackground() {
+        const elemSize = 70
+        this.rows = generateRandomNumbers(
+            window.innerHeight / (elemSize / 3),
+            100
+        )
+        this.items = generateRandomNumbers(window.innerWidth / elemSize, 100)
     }
 
     changeBackgroundColor(event: MouseEvent, row: number, col: number) {

@@ -1,21 +1,4 @@
 <div class="float flex mt-5 w-full justify-content-center">
-    <!-- TODO maybe remove -->
-    <!-- <div class="flex-1 flex justify-content-center p-5">
-        <div
-            *ngFor="let img of leftImages"
-            class="w-fit"
-        >
-            <p-card>
-                <p>
-                    <img
-                        class="w-full"
-                        [src]="img.src"
-                        [alt]="img.alt"
-                    />
-                </p>
-            </p-card>
-        </div>
-    </div> -->
     <div>
         <div
             class="relative flex flex-column gap-5 justify-content-center p-5 w-screen max-w-35rem"
@@ -38,28 +21,10 @@
                     class="m-0"
                 ></p>
             </p-card>
-            <!-- TODO make sure this is good on mobile -->
             <div
                 *ngFor="let c of cards"
                 class="mb-5"
             ></div>
         </div>
     </div>
-    <!-- TODO maybe remove -->
-    <!-- <div class="flex-1 flex justify-content-center p-5">
-        <div
-            *ngFor="let img of rightImages"
-            class="w-fit"
-        >
-            <p-card>
-                <p>
-                    <img
-                        class="w-full"
-                        [src]="img.src"
-                        [alt]="img.alt"
-                    />
-                </p>
-            </p-card>
-        </div>
-    </div> -->
 </div>
