@@ -41,6 +41,7 @@ export class AppComponent {
     @HostListener('window:resize', ['$event'])
     onResize(_event: Event) {
         this.isSideways = this.getIsSideways()
+        this.cdr.detectChanges()
         this.setTop()
         this.setLeft()
         this.cdr.detectChanges()

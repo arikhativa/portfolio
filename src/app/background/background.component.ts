@@ -32,11 +32,12 @@ export class BackgroundComponent {
         this.setBackground()
     }
 
-    @HostListener('window:scroll', ['$event'])
-    onWindowScroll(event: Event) {
-        const scrollTop = window.scrollY / 4 || 0
-        this.el.nativeElement.style.transform = `translateY(-${scrollTop}px)`
-    }
+    // TODO this makes problems
+    // @HostListener('window:scroll', ['$event'])
+    // onWindowScroll(event: Event) {
+    //     const scrollTop = window.scrollY / 4 || 0
+    //     this.el.nativeElement.style.transform = `translateY(-${scrollTop}px)`
+    // }
 
     setBackground() {
         const elemSize = 70
