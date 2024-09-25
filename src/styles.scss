@@ -39,11 +39,9 @@ body {
     -moz-scrollbar-width: none; /* Old Firefox versions */
 }
 
-// Hide outline since Opera has a default outline on click
-button:active,
-button:focus,
 * {
-    outline: none;
+    outline: none; // remove focus outline
+    -webkit-tap-highlight-color: transparent; // remove tap highlight
 }
 
 p-button {
