@@ -40,6 +40,8 @@ body {
 }
 
 // Hide outline since Opera has a default outline on click
+button:active,
+button:focus,
 * {
     outline: none;
 }
@@ -71,6 +73,10 @@ p-button {
 // Extra PrimeFlex classes
 .min-h-10rem {
     min-height: 10rem;
+}
+
+.min-h-20rem {
+    min-height: 20rem;
 }
 
 .min-w-10rem {

@@ -10,11 +10,9 @@
     id="navbar"
     [isSideways]="isSideways"
     class="fixed"
-    [style.top]="top"
-    [style.left]="left"
     [ngClass]="
         isSideways
-            ? 'slide-left-navbar min-h-10rem h-full pt-8 pb-8'
-            : ' slide-up-navbar min-w-20rem pb-5'
+            ? 'slide-left-navbar top-50 right-0 min-h-20rem h-full pt-5 pb-5'
+            : ' slide-up-navbar bottom-0 left-50 min-w-20rem pb-5'
     "
 ></app-navbar>

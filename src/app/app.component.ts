@@ -10,17 +10,9 @@ import { animations } from './animations'
 })
 export class AppComponent {
     title = 'portfolio'
-    top!: string
-    left!: string
     isSideways: boolean = this.getIsSideways()
 
     constructor(private cdr: ChangeDetectorRef) {}
-
-    ngAfterViewInit() {
-        this.setTop()
-        this.setLeft()
-        this.cdr.detectChanges()
-    }
 
     @HostListener('@routeAnimations.done')
     onAnimationDone() {
@@ -42,9 +34,6 @@ export class AppComponent {
     onResize(_event: Event) {
         this.isSideways = this.getIsSideways()
         this.cdr.detectChanges()
-        this.setTop()
-        this.setLeft()
-        this.cdr.detectChanges()
     }
 
     isDesktop() {
@@ -58,28 +47,5 @@ export class AppComponent {
             return true
         }
         return false
-    }
-
-    setTop() {
-        const height = window.innerHeight
-
-        if (this.isSideways) {
-            this.top = `${height / 2}px`
-        } else {
-            this.top = `${height - 200}px`
-        }
-    }
-
-    setLeft() {
-        const elem = document.getElementById('navbar')
-        if (!elem) return
-        const rect = elem.getBoundingClientRect()
-        const elemWidth = rect.width
-        const width = window.innerWidth
-        if (this.isSideways) {
-            this.left = `${width - elemWidth}px`
-        } else {
-            this.left = `${width / 2}px`
-        }
     }
 }
