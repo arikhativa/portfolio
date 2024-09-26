@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://yoavrabby.com/sitemap.xml
