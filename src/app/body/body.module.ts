@@ -17,7 +17,8 @@ import { ChipModule } from 'primeng/chip'
 import { ContactComponent } from '../contact/contact.component'
 import { DividerModule } from 'primeng/divider'
 import { TechStackComponent } from '../tech-stack/tech-stack.component'
-
+import { DialogModule } from 'primeng/dialog'
+import { TooltipModule } from 'primeng/tooltip'
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -30,6 +31,8 @@ import { TechStackComponent } from '../tech-stack/tech-stack.component'
         TechStackComponent,
     ],
     imports: [
+        TooltipModule,
+        DialogModule,
         DividerModule,
         ChipModule,
         AccordionModule,

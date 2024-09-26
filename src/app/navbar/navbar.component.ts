@@ -1,4 +1,4 @@
-import { Component, HostBinding, HostListener, Input } from '@angular/core'
+import { Component, HostListener, Input } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { filter } from 'rxjs'
 

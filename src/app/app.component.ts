@@ -9,7 +9,6 @@ import { animations } from './animations'
     animations: [animations],
 })
 export class AppComponent {
-    title = 'portfolio'
     isSideways: boolean = this.getIsSideways()
 
     constructor(private cdr: ChangeDetectorRef) {}

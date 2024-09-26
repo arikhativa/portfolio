@@ -1,5 +1,10 @@
 import { Tab } from '../projects/projects.component'
 
+export const toolTip = {
+    showDelay: '300',
+    hideDelay: '300',
+}
+
 export const about = {
     cards: [
         {
