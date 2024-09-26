@@ -1,3 +1,4 @@
+import { toolTip } from './../misc/strings'
 import { Component } from '@angular/core'
 
 @Component({
@@ -8,6 +9,14 @@ import { Component } from '@angular/core'
 export class ContactComponent {
     readonly email = 'yoavar@protonmail.com'
     readonly file = 'Yoav-Rabby-CV.pdf'
+    readonly pdfPath = 'assets/cv.pdf'
+    readonly toolTip = toolTip
+
+    visible: boolean = false
+
+    showDialog() {
+        this.visible = true
+    }
 
     redirectToEmail(): void {
         window.location.href = `mailto:${this.email}`
@@ -15,7 +24,7 @@ export class ContactComponent {
 
     downloadFile() {
         const link = document.createElement('a')
-        link.href = 'assets/cv.pdf'
+        link.href = this.pdfPath
         link.target = '_self'
         link.download = this.file
         link.click()
