@@ -39,6 +39,7 @@
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
         "postcss": "^8.4.47",
+        "source-map-explorer": "^2.5.3",
         "typescript": "~5.2.2",
         "uglify-js": "^3.19.3"
     }
