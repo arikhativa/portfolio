@@ -39,9 +39,9 @@ export class NavbarComponent {
 
     @HostListener('window:keydown', ['$event'])
     handleKeyDown(event: KeyboardEvent) {
-        if (event.key === 'ArrowLeft') {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
             this.navigateLeft()
-        } else if (event.key === 'ArrowRight') {
+        } else if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
             this.navigateRight()
         }
     }

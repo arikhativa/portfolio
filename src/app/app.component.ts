@@ -40,7 +40,7 @@ export class AppComponent {
     }
 
     private getIsSideways(): boolean {
-        if (this.isDesktop()) return false
+        // if (this.isDesktop()) return false
         if (window.innerWidth > window.innerHeight) {
             if (window.innerWidth < 600) return false
             return true
