@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build && purgecss -c postcss.config.js",
+        "build": "ng build && purgecss -c postcss.config.js && node purge-js.js",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
@@ -39,6 +39,7 @@
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "~2.1.0",
         "postcss": "^8.4.47",
-        "typescript": "~5.2.2"
+        "typescript": "~5.2.2",
+        "uglify-js": "^3.19.3"
     }
 }
