@@ -84,7 +84,7 @@ export const projects: {
         {
             title: 'Milouban TLD',
             content:
-                '<a href="https://www.milouban.com/">milouban.com</a><br><br>Milouban LTD is a company that trades with cotton linter pulp. this website serves them as a landing page and to showcase their products. Written with Wordpress, and hosted on Github Pages.',
+                '<a href="https://www.milouban.com/">milouban.com</a><br><br>Milouban LTD is a company that trades with cotton linters pulp. this website serves them as a landing page and to showcase their products. Written with Wordpress, and hosted on Github Pages.',
 
             tech: ['Wordpress', 'Docker', 'Github Pages'],
         },
