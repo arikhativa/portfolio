@@ -22,7 +22,7 @@ export const about = {
         },
         {
             header: 'Broadcom Inc.',
-            text: 'Work at Broadcom for 2 years. Mostly in a position of a full stack developer.\nAfter a year there i got the responsibility of the ELK stack and created a provisioning service in Golang.',
+            text: 'Worked at Broadcom for 2 years. Mostly in a position of a full stack developer.\nAfter a year there I assumed responsibility for the ELK stack and created a provisioning service in Golang.',
         },
         {
             header: 'Sofi Cooperative',
@@ -42,7 +42,7 @@ export const projects: {
         {
             title: 'Beit Tawfik Toubi',
             content:
-                '<a href="https://beittawfiktoubi.com">beittawfiktoubi.com</a><br><br>Beit Tawfik Toubi is a website for the small hosting business. Written in Angular and hosted on Github Pages.',
+                '<a href="https://beittawfiktoubi.com">beittawfiktoubi.com</a><br><br>Beit Tawfik Toubi is a small hosting business. The website is written in Angular and hosted on Github Pages.',
             tech: ['Angular', 'Typescript', 'Github Pages'],
         },
         {
@@ -70,7 +70,7 @@ export const projects: {
         {
             title: 'Oded Rabby',
             content:
-                '<a href="https://odedrabby.com/">odedrabby.com</a><br><br>Landing page for Oded Rabby. Since he is a musician, I created a custom music player to the page. Written in Angular and hosted on Github Pages.',
+                '<a href="https://odedrabby.com/">odedrabby.com</a><br><br>Landing page for Oded Rabby. He is a musician, and I created a custom music player for the page. Written in Angular and hosted on Github Pages.',
 
             tech: ['Angular', 'Typescript', 'Github Pages'],
         },
