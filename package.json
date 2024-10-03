@@ -4,7 +4,8 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build && purgecss -c postcss.config.js && node purge-js.js",
+        "build": "ng build && node purge-js.js",
+        "no": "ng build && purgecss -c postcss.config.js && node purge-js.js",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },

@@ -28,3 +28,20 @@ h1 {
         font-size: 10rem; // Further adjust font size for even larger screens
     }
 }
+
+// ::ng-deep .p-button {
+//     background: var(--primary);
+//     border-color: var(--primary);
+//     color: var(--primary-light);
+//     pointer-events: auto;
+// }
+
+// ::ng-deep .p-button:not(:disabled):hover {
+//     background: var(--primary-mid);
+//     border-color: var(--primary-mid);
+// }
+
+// ::ng-deep .p-button:active {
+//     background: black;
+//     border-color: black;
+// }
