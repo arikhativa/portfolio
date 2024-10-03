@@ -1,12 +1,11 @@
 import { Component } from '@angular/core'
-import { getColorIndex, getNextFill } from '../misc/colorChange'
-
-export interface YoavRabbyColors {
-    y: string
-    o: string
-    a: string
-    v: string
-}
+import {
+    Color,
+    getColorIndex,
+    getNextFill,
+    getNextStroke,
+} from '../misc/colorChange'
+import { StoreService } from '../store.service'
 
 @Component({
     selector: 'app-intro',
@@ -14,19 +13,22 @@ export interface YoavRabbyColors {
     styleUrl: './intro.component.scss',
 })
 export class IntroComponent {
-    lettersColors!: YoavRabbyColors
+    color!: Color
+    constructor(private storeService: StoreService) {}
 
-    onMouseDown(event: MouseEvent): void {
-        event.preventDefault()
-        const t = event.target as HTMLElement
-        if (t && ['y', 'o', 'a', 'v'].includes(t.id)) {
-            const entry = t.id as keyof YoavRabbyColors
+    ngOnInit(): void {
+        this.color = this.storeService.introColor
+    }
 
-            const index = getColorIndex(this.lettersColors[entry])
-            const fill = getNextFill(index)
-            // const stroke = getNextStroke(index)
-            this.lettersColors[entry] = fill
-            // this.lettersColors[entry].stroke = stroke
-        }
+    ngOnDestroy() {
+        this.storeService.introColor = this.color
+    }
+
+    ChangeColor(): void {
+        const index = getColorIndex(this.color.fill)
+        const fill = getNextFill(index)
+        const stroke = getNextStroke(index)
+        this.color.fill = fill
+        this.color.stroke = stroke
     }
 }

@@ -3,34 +3,28 @@
 //     max-width: 800px;
 // }
 
-.aaa {
-    display: inline; /* or inline-block */
-    pointer-events: auto;
-    cursor: pointer;
-    font-size: 10rem;
-}
-
-span {
-    // cursor: pointer;
-    // pointer-events: all;
-    background-color: red;
-    // font-size: 10rem;
-}
-
 h1 {
-    display: inline;
-    //     margin: 0;
-    //     padding: 0;
-    //     font-size: 10rem;
-    //     max-width: 800px;
-    //     // pointer-events: all;
-    background-color: blue;
-    //     // cursor: pointer;
-    //     // letter-spacing: 1rem;
+    margin: 0;
+    padding: 0;
+    // max-width: 800px;
+    pointer-events: all;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: var(--box-shadow);
+    cursor: default;
+    pointer-events: none;
+    letter-spacing: 0.5rem;
+    // color: var(--primary);
+    // -webkit-text-stroke: 5px var(--primary-light);
+    // -webkit-text-fill-color: transparent;
 
-    //     // -webkit-text-stroke: 5px black;
-    //     // -webkit-text-fill-color: transparent;
-    //     // text-shadow: -10px -10px 0 var(--primary-light),
-    //     //     10px -10px 0 var(--primary-light), -10px 10px 0 var(--primary-light),
-    //     //     10px 10px 0 var(--primary-light);
+    transition: all 2s ease;
+
+    font-size: 5rem;
+    @media (min-width: 600px) {
+        font-size: 8rem; // Further adjust font size for even larger screens
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 10rem; // Further adjust font size for even larger screens
+    }
 }
