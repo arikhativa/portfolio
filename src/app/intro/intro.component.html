@@ -1,10 +1,33 @@
 <article
     class="flex flex-column justify-content-center align-items-center pt-8 mx-4"
 >
-    <div class="flex flex-column justify-content-center w-full max-w-35rem">
-        <app-yoav class="w-full h-auto float"></app-yoav>
-        <app-rabby class="w-full h-auto float animation-delay-1000"></app-rabby>
+    <div
+        class="flex flex-column align-items-center justify-content-center w-full max-w-35rem gap-2 mb-5"
+    >
+        <h1
+            class="float"
+            [style.color]="color.fill"
+            [style.-webkit-text-stroke]="'2.5px ' + color.stroke"
+        >
+            Yoav
+        </h1>
+        <h1
+            class="float animation-delay-1000"
+            [style.color]="color.fill"
+            [style.-webkit-text-stroke]="'2.5px ' + color.stroke"
+        >
+            Rabby
+        </h1>
+        <!-- <app-yoav class="w-full h-auto float"></app-yoav>
+        <app-rabby class="w-full h-auto float animation-delay-1000"></app-rabby> -->
     </div>
     <app-tech-stack class="flex justify-content-center w-full"></app-tech-stack>
+    <p-button
+        severity="secondary"
+        class="mt-5"
+        icon="pi pi-palette"
+        size="large"
+        (onClick)="ChangeColor()"
+    ></p-button>
     <div class="mb-8 mt-8"></div>
 </article>

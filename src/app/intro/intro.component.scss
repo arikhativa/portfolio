@@ -1,4 +1,30 @@
-app-yoav,
-app-rabby {
-    max-width: 800px;
+// app-yoav,
+// app-rabby {
+//     max-width: 800px;
+// }
+
+h1 {
+    margin: 0;
+    padding: 0;
+    // max-width: 800px;
+    pointer-events: all;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: var(--box-shadow);
+    cursor: default;
+    pointer-events: none;
+    letter-spacing: 0.5rem;
+    // color: var(--primary);
+    // -webkit-text-stroke: 5px var(--primary-light);
+    // -webkit-text-fill-color: transparent;
+
+    transition: all 2s ease;
+
+    font-size: 5rem;
+    @media (min-width: 600px) {
+        font-size: 8rem; // Further adjust font size for even larger screens
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 10rem; // Further adjust font size for even larger screens
+    }
 }
