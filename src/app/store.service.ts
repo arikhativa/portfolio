@@ -3,11 +3,18 @@ import { Card, CardMeta } from '../app/about/about.component'
 import { YoavColors } from './yoav/yoav.component'
 import { Color, fills, strokes } from './misc/colorChange'
 import { RabbyColors } from './rabby/rabby.component'
+import { Github } from './github.service'
 
 @Injectable({
     providedIn: 'root',
 })
 export class StoreService {
+    private _github: Github = new Github()
+
+    get github(): Github {
+        return this._github
+    }
+
     private _cardMeta: CardMeta = {
         cardIndex: 0,
         type: 'header',

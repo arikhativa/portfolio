@@ -26,7 +26,7 @@ export class IntroComponent {
         private terminalService: TerminalService
     ) {
         this.subscription = this.terminalService.commandHandler.subscribe(
-            (command) => {
+            async (command) => {
                 const bin = command.split(' ')[0]
 
                 let response = 'Unknown command: ' + command
@@ -38,7 +38,7 @@ export class IntroComponent {
 
                 const handler = this.handlerList[this.cmdList.indexOf(bin)]
 
-                response = handler(command)
+                response = handler(this.storeService.github, command)
 
                 this.terminalService.sendResponse(response)
             }
