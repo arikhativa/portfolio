@@ -6,6 +6,9 @@ import {
     getNextStroke,
 } from '../misc/colorChange'
 import { StoreService } from '../store.service'
+import { Subscription } from 'rxjs'
+import { TerminalService } from 'primeng/terminal'
+import { cmdList, handlerList } from '../misc/shell'
 
 @Component({
     selector: 'app-intro',
@@ -13,8 +16,34 @@ import { StoreService } from '../store.service'
     styleUrl: './intro.component.scss',
 })
 export class IntroComponent {
+    subscription: Subscription
     color!: Color
-    constructor(private storeService: StoreService) {}
+    cmdList = cmdList
+    handlerList = handlerList
+
+    constructor(
+        private storeService: StoreService,
+        private terminalService: TerminalService
+    ) {
+        this.subscription = this.terminalService.commandHandler.subscribe(
+            (command) => {
+                const bin = command.split(' ')[0]
+
+                let response = 'Unknown command: ' + command
+
+                if (!command || !this.cmdList.includes(bin)) {
+                    this.terminalService.sendResponse(response)
+                    return
+                }
+
+                const handler = this.handlerList[this.cmdList.indexOf(bin)]
+
+                response = handler(command)
+
+                this.terminalService.sendResponse(response)
+            }
+        )
+    }
 
     ngOnInit(): void {
         this.color = this.storeService.introColor
@@ -22,6 +51,9 @@ export class IntroComponent {
 
     ngOnDestroy() {
         this.storeService.introColor = this.color
+        if (this.subscription) {
+            this.subscription.unsubscribe()
+        }
     }
 
     ChangeColor(): void {

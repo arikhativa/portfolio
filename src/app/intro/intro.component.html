@@ -29,5 +29,20 @@
         size="large"
         (onClick)="ChangeColor()"
     ></p-button>
+    <p-card class="mt-5">
+        <p>
+            Enter "
+            <strong>date</strong>
+            " to display the current date, "
+            <strong>greet &#123;0&#125;</strong>
+            " for a message and "
+            <strong>random</strong>
+            " to get a random number.
+        </p>
+        <p-terminal
+            welcomeMessage="Welcome to WebShell. you can explore with 'help' command."
+            prompt="$"
+        />
+    </p-card>
     <div class="mb-8 mt-8"></div>
 </article>

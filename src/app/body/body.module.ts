@@ -19,6 +19,7 @@ import { DividerModule } from 'primeng/divider'
 import { TechStackComponent } from '../tech-stack/tech-stack.component'
 import { DialogModule } from 'primeng/dialog'
 import { TooltipModule } from 'primeng/tooltip'
+import { TerminalModule, TerminalService } from 'primeng/terminal'
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -31,6 +32,7 @@ import { TooltipModule } from 'primeng/tooltip'
         TechStackComponent,
     ],
     imports: [
+        TerminalModule,
         TooltipModule,
         DialogModule,
         DividerModule,
@@ -45,5 +47,6 @@ import { TooltipModule } from 'primeng/tooltip'
         FormsModule,
     ],
     exports: [IntroComponent, BackgroundComponent, NavbarComponent],
+    providers: [TerminalService],
 })
 export class BodyModule {}
