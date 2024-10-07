@@ -25,8 +25,15 @@
     display: flex;
     gap: var(--gep);
     padding-block: 1rem;
-    animation: move 120s linear infinite;
     width: max-content;
+}
+
+.animate {
+    animation: move 120s linear infinite;
+}
+
+.rev-animate {
+    animation: move 60s linear infinite reverse;
 }
 
 @keyframes move {
