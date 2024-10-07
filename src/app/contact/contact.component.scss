@@ -16,3 +16,9 @@
 p {
     pointer-events: auto;
 }
+
+.link {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: var(--primary);
+}

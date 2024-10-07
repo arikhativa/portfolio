@@ -1,6 +1,9 @@
-app-yoav,
-app-rabby {
+app-yoav {
     max-width: 800px;
+}
+
+app-rabby {
+    width: 115%;
 }
 
 ::ng-deep .p-card-body {
