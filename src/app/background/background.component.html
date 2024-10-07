@@ -1,6 +1,16 @@
 <div id="con">
-    <div #con *ngFor="let row of rows" class="row">
-        <div *ngFor="let col of items" #tile class="tile" (mouseover)="changeBackgroundColor($event, row, col)"
-            (mouseout)="resetBackgroundColor($event)"></div>
+    <div
+        #con
+        *ngFor="let row of rows; let i = index"
+        class="row"
+    >
+        <div
+            *ngFor="let col of items; let j = index"
+            #tile
+            class="tile"
+            id="row{{ i }}-col{{ j }}"
+            (mouseover)="changeBackgroundColor($event, row, col)"
+            (mouseout)="resetBackgroundColor($event)"
+        ></div>
     </div>
 </div>

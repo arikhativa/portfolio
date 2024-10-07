@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common'
-import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core'
+import {
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    HostListener,
+    Renderer2,
+} from '@angular/core'
+import { sleep } from '../misc/utils'
 
 @Component({
     selector: 'app-background',
@@ -9,6 +16,7 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core'
     styleUrl: './background.component.scss',
 })
 export class BackgroundComponent {
+    readonly INTERVAL = 2500
     counter = 0
     readonly COLORS = [
         '#F87171', // red
@@ -21,10 +29,23 @@ export class BackgroundComponent {
     items: number[] = []
     background: string = 'rgb(255 255 255 / 25%)'
 
-    constructor(private el: ElementRef, private renderer: Renderer2) {}
+    intervalID: any | undefined
+
+    constructor(
+        private el: ElementRef,
+        private renderer: Renderer2,
+        private cdr: ChangeDetectorRef
+    ) {}
 
     ngOnInit() {
         this.setBackground()
+        this.intervalID = setInterval(() => {
+            this.changeRandomBackgroundColor()
+        }, this.INTERVAL)
+    }
+
+    ngOnDestroy() {
+        clearInterval(this.intervalID)
     }
 
     @HostListener('window:resize', ['$event'])
@@ -52,6 +73,20 @@ export class BackgroundComponent {
         const randomColor = this.getColor(row, col)
         if (event.target instanceof HTMLElement)
             event.target.style.backgroundColor = randomColor
+    }
+
+    async changeRandomBackgroundColor() {
+        const row = Math.floor(Math.random() * this.rows.length)
+        const col = Math.floor(Math.random() * this.items.length)
+        const randomColor = this.getColor(row, col)
+        const elem = document.getElementById(`row${row}-col${col}`)
+        if (elem) {
+            elem.style.backgroundColor = randomColor
+            this.cdr.detectChanges()
+            await sleep(this.INTERVAL * 2.5)
+            elem.style.backgroundColor = this.background
+            this.cdr.detectChanges()
+        }
     }
 
     resetBackgroundColor(event: MouseEvent) {
