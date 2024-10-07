@@ -2,32 +2,34 @@
     class="flex flex-column justify-content-center align-items-center pt-8 mx-4"
 >
     <div
-        class="flex flex-column align-items-center justify-content-center w-full max-w-35rem gap-2 mb-5"
+        class="flex flex-column align-items-center justify-content-center w-full max-w-20rem gap-2 mb-5"
     >
-        <h1
-            class="float"
-            [style.color]="color.fill"
-            [style.-webkit-text-stroke]="'2.5px ' + color.stroke"
-        >
-            Yoav
-        </h1>
-        <h1
-            class="float animation-delay-1000"
-            [style.color]="color.fill"
-            [style.-webkit-text-stroke]="'2.5px ' + color.stroke"
-        >
-            Rabby
-        </h1>
-        <!-- <app-yoav class="w-full h-auto float"></app-yoav>
-        <app-rabby class="w-full h-auto float animation-delay-1000"></app-rabby> -->
+        <app-yoav class="w-full h-auto float"></app-yoav>
+        <app-rabby class="w-full h-auto float animation-delay-2000"></app-rabby>
     </div>
+    <p-chip class="float animation-delay-1000 mb-5">
+        <h3 class="m-1">Software Developer</h3>
+    </p-chip>
     <app-tech-stack class="flex justify-content-center w-full"></app-tech-stack>
-    <p-button
-        severity="secondary"
-        class="mt-5"
-        icon="pi pi-palette"
-        size="large"
-        (onClick)="ChangeColor()"
-    ></p-button>
+    <app-tech-stack
+        class="flex justify-content-center w-full"
+        [goLeft]="false"
+    ></app-tech-stack>
+    <p-card class="mt-5">
+        <ul class="p-0 m-0 flex justify-content-between gap-3">
+            <a href="https://github.com/arikhativa">
+                <i
+                    style="font-size: 1.5rem"
+                    class="pi pi-github"
+                ></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yoav-rabby">
+                <i
+                    style="font-size: 1.5rem"
+                    class="pi pi-linkedin"
+                ></i>
+            </a>
+        </ul>
+    </p-card>
     <div class="mb-8 mt-8"></div>
 </article>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 @Component({
     selector: 'app-tech-stack',
@@ -6,7 +6,9 @@ import { Component } from '@angular/core'
     styleUrl: './tech-stack.component.scss',
 })
 export class TechStackComponent {
-    readonly techStack = [
+    @Input() goLeft = true
+
+    readonly techLeftStack = [
         'Angular',
         'TypeScript',
         'Node.js',
@@ -19,7 +21,9 @@ export class TechStackComponent {
         'Elasticsearch',
         'Logstash',
         'Kibana',
-        'Git',
+    ]
+
+    readonly techRightStack = [
         'CI/CD',
         'Prisma',
         'GraphQL',

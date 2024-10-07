@@ -1,11 +1,27 @@
 <div class="scroller">
-    <div class="inner-con">
+    <div
+        class="inner-con animate"
+        *ngIf="goLeft"
+    >
         <p-chip
-            *ngFor="let t of techStack"
+            *ngFor="let t of techLeftStack"
             [label]="t"
         />
         <p-chip
-            *ngFor="let t of techStack"
+            *ngFor="let t of techLeftStack"
+            [label]="t"
+        />
+    </div>
+    <div
+        class="inner-con rev-animate"
+        *ngIf="!goLeft"
+    >
+        <p-chip
+            *ngFor="let t of techRightStack"
+            [label]="t"
+        />
+        <p-chip
+            *ngFor="let t of techRightStack"
             [label]="t"
         />
     </div>
