@@ -43,26 +43,25 @@
         <div class="flex flex-row justify-content-between align-items-center">
             <p>More Stuff</p>
             <ul class="p-0 m-0 w-fit flex justify-content-center gap-2 h-fit">
-                <a
-                    class="link"
-                    href="https://github.com/arikhativa"
-                >
-                    <i
-                        style="font-size: 1.6rem; color: var(--primary-light)"
-                        class="pi pi-github"
-                    ></i>
-                </a>
-                <a
-                    class="link"
-                    href="https://www.linkedin.com/in/yoav-rabby"
-                >
-                    <i
-                        style="font-size: 1.6rem; color: var(--primary-light)"
-                        class="pi pi-linkedin"
-                    ></i>
-                </a>
+                <p-button
+                    icon="pi pi-github"
+                    size="large"
+                    (onClick)="linkToGithub()"
+                    pTooltip="Link to Github"
+                    tooltipPosition="top"
+                    [showDelay]="toolTip.showDelay"
+                    [hideDelay]="toolTip.hideDelay"
+                ></p-button>
+                <p-button
+                    icon="pi pi-linkedin"
+                    size="large"
+                    (onClick)="linkToLinkedin()"
+                    pTooltip="Link to Linkedin"
+                    tooltipPosition="top"
+                    [showDelay]="toolTip.showDelay"
+                    [hideDelay]="toolTip.hideDelay"
+                ></p-button>
             </ul>
-            <!-- </div> -->
         </div>
     </p-card>
 </article>

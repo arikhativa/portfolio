@@ -29,4 +29,13 @@ export class ContactComponent {
         link.download = this.file
         link.click()
     }
+
+    linkToGithub(): void {
+        const linkedinUrl = 'https://github.com/arikhativa'
+        window.open(linkedinUrl, '_blank')
+    }
+    linkToLinkedin(): void {
+        const linkedinUrl = 'https://www.linkedin.com/in/yoav-rabby'
+        window.open(linkedinUrl, '_blank')
+    }
 }

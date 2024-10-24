@@ -28,3 +28,7 @@ a {
     border-radius: 6px;
     background-color: var(--primary);
 }
+
+::ng-deep .p-button-icon {
+    font-size: 1.5rem;
+}
